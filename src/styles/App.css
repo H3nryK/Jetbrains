@@ -1,22 +1,70 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #084d9c, #08214a, #96113b, #bdafa6);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #fff; /* Ensure text is visible on dark background */
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .jumbotron-custom {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
-    text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Light translucent background for readability */
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .jumbotron-custom {
+    padding: 1rem 0.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .jumbotron-custom {
-      padding: 1rem 0.5rem;
-    }
-  }
-  
-  .card {
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background for readability */
+  color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-outline-primary {
+  border-color: #bdafa6;
+  color: #bdafa6;
+}
+
+.btn-outline-primary:hover {
+  background-color: #bdafa6;
+  color: #08214a;
+}
+
+input[type="text"] {
+  border-radius: 25px;
+  border: 2px solid #bdafa6;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 5px rgba(189, 175, 166, 0.5);
+  border-color: #bdafa6;
+}
+
+.position-relative {
+  position: relative;
+}
