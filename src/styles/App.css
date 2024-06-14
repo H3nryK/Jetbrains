@@ -6,7 +6,7 @@ body {
   background: linear-gradient(135deg, #084d9c, #08214a, #96113b, #bdafa6);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
-  color: #fff; /* Ensure text is visible on dark background */
+  color: #fff; /* Default text color to white for better contrast */
 }
 
 @keyframes gradientAnimation {
@@ -18,7 +18,7 @@ body {
 .jumbotron-custom {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: rgba(255, 255, 255, 0.1); /* Light translucent background for readability */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark translucent background for readability */
   border-radius: 0.3rem;
   text-align: center;
 }
@@ -31,8 +31,8 @@ body {
 
 .card {
   transition: transform 0.3s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background for readability */
-  color: #fff;
+  background-color: rgba(255, 255, 255, 0.8); /* Light translucent background for readability */
+  color: #08214a; /* Dark text for contrast against light card background */
 }
 
 .card:hover {
@@ -58,6 +58,8 @@ body {
 input[type="text"] {
   border-radius: 25px;
   border: 2px solid #bdafa6;
+  color: #08214a; /* Dark text for contrast */
+  background-color: rgba(255, 255, 255, 0.8); /* Light translucent background for readability */
 }
 
 input[type="text"]:focus {
