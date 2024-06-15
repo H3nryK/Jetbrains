@@ -6,11 +6,15 @@
 
   <title>Jetbrains Institute of Information Technology</title>
 
+  <!-- Favicon link -->
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+
   <!-- CSS files -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Beyond+Wonderland&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
 
   <!-- Main CSS file -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -29,7 +33,10 @@
   <!-- Unique and responsive navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Jetbrains College</a>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Jetbrains College Logo" class="d-inline-block align-top">
+        Jetbrains College
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,10 +49,13 @@
             <a class="nav-link" href="#">Courses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Testify</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Developer</a>
           </li>
         </ul>
       </div>
@@ -67,7 +77,7 @@
     <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card course-card">
-          <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="Course Image">
+          <img src="assets/images/courses/web.jpg" class="card-img-top" alt="Course Image">
           <div class="card-body">
             <h5 class="card-title">Web Development</h5>
             <p class="card-text">Learn to build modern websites using HTML, CSS, and JavaScript.</p>
@@ -77,7 +87,7 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card course-card">
-          <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="Course Image">
+          <img src="assets/images/courses/py.jpg" class="card-img-top" alt="Course Image">
           <div class="card-body">
             <h5 class="card-title">Python Programming</h5>
             <p class="card-text">Master the fundamentals of Python and build real-world applications.</p>
@@ -87,10 +97,10 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card course-card">
-          <img src="https://via.placeholder.com/500x200" class="card-img-top" alt="Course Image">
+          <img src="assets/images/courses/ms.jpg" class="card-img-top" alt="Course Image">
           <div class="card-body">
-            <h5 class="card-title">Cybersecurity Essentials</h5>
-            <p class="card-text">Learn the fundamentals of cybersecurity and protect your systems.</p>
+            <h5 class="card-title">Computer Packages</h5>
+            <p class="card-text">Learn the fundamentals of computing and basic skills.</p>
             <a href="#" class="btn btn-primary">Enroll Now</a>
           </div>
         </div>
@@ -137,7 +147,7 @@
     <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="News Image">
+          <img src="assets/images/news/course.jpg" class="card-img-top" alt="News Image">
           <div class="card-body">
             <h5 class="card-title">New Course Launched</h5>
             <p class="card-text">We've added a new course on Machine Learning to our curriculum. Enroll now and stay ahead of the curve!</p>
@@ -147,7 +157,7 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="News Image">
+          <img src="assets/images/news/success.jpg" class="card-img-top" alt="News Image">
           <div class="card-body">
             <h5 class="card-title">Student Success Story</h5>
             <p class="card-text">Congratulations to our student, Sarah Johnson, who landed her dream job after completing our Python Programming course!</p>
@@ -157,7 +167,7 @@
       </div>
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="News Image">
+          <img src="assets/images/news/webinar.jpg" class="card-img-top" alt="News Image">
           <div class="card-body">
             <h5 class="card-title">Upcoming Webinar</h5>
             <p class="card-text">Join our free webinar on "Cybersecurity Trends and Challenges" hosted by industry experts. Register now!</p>
@@ -176,15 +186,12 @@
             <div class="contact-form">
               <form>
                 <div class="form-group">
-                  <label for="name">Name</label>
                   <input type="text" class="form-control" id="name" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
-                  <label for="message">Message</label>
                   <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary animate__animated animate__bounceIn">Submit</button>
@@ -214,7 +221,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h5>About Jetbrains College</h5>
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="assets/images/logo.png" alt="Jetbrains College Logo" class="mr-3">
+            <h5>Jetbrains College</h5>
+          </a>
           <p>At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
         </div>
         <div class="col-md-3">
@@ -222,8 +232,9 @@
           <ul class="list-unstyled">
             <li><a href="#" class="footer-link">Home</a></li>
             <li><a href="#" class="footer-link">Courses</a></li>
-            <li><a href="#" class="footer-link">About</a></li>
-            <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">testify</a></li>
+            <li><a href="#" class="footer-link">Enroll</a></li>
+            <li><a href="#" class="footer-link">Developer</a></li>
           </ul>
         </div>
         <div class="col-md-3">
