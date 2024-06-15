@@ -1,158 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jetbrains College</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .navbar-custom { background-color: #084d9c; }
+        .jumbotron-custom { background-color: #08214a; color: #bdafa6; }
+        .btn-primary { background-color: #96113b; border-color: #96113b; }
+        .btn-secondary { background-color: #084d9c; border-color: #084d9c; }
+        .footer-custom { background-color: #08214a; color: #bdafa6; }
+    </style>
+</head>
+<body>
 
-        <title>Jetbrains College</title>
-
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Jetbrains</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand text-white" href="#">Jetbrains</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link text-white" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link text-white" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Courses</a>
+                    <a class="nav-link text-white" href="#">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link text-white" href="#">Contact</a>
                 </li>
-              </ul>
-            </div>
-        </nav>
-          
-        <!-- Hero Section -->
-        <div class="jumbotron jumbotron-fluid text-white bg-dark" style="background: url('assets/images/it.webp') no-repeat top center; background-size: cover;">
-            <div class="container text-center">
-              <h1 class="display-4">Welcome to Jetbrains College</h1>
-              <p class="lead">Empowering students for the future</p>
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </div>
-        </div>          
+            </ul>
+        </div>
+    </nav>
 
-        <!-- About section -->
-        <section id="about" class="py-5">
-            <div class="container">
-              <div class="row">
+    <!-- Hero Section -->
+    <div class="jumbotron jumbotron-fluid jumbotron-custom text-white" style="background: url('assets/images/it.webp') no-repeat top center; background-size: cover;">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome to Jetbrains College</h1>
+            <p class="lead">Empowering students for the future</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
+    </div>
+
+    <!-- About section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
                 <div class="col-md-6">
-                  <h2>About Us</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                  <a href="#" class="btn btn-secondary">Read More</a>
+                    <h2 style="color: #084d9c;">About Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
                 </div>
                 <div class="col-md-6">
-                  <img src="about-image.jpg" class="img-fluid" alt="About Image">
+                    <img src="about-image.jpg" class="img-fluid" alt="About Image">
                 </div>
-              </div>
             </div>
-        </section>          
+        </div>
+    </section>
 
-        <!-- Courses Section -->
-        <section id="courses" class="py-5 bg-light">
-            <div class="container">
-              <h2 class="text-center">Popular Course</h2>
-              <div class="row">
+    <!-- Courses Section -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center" style="color: #084d9c;">Popular Courses</h2>
+            <div class="row">
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <img src="course1.jpg" class="card-img-top" alt="Course 1">
-                    <div class="card-body">
-                      <h5 class="card-title">Computer Package</h5>
-                      <p class="card-text">Short description of the course.</p>
-                      <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="card mb-4">
+                        <img src="course1.jpg" class="card-img-top" alt="Course 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Package</h5>
+                            <p class="card-text">Short description of the course.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <img src="course2.jpg" class="card-img-top" alt="Course 2">
-                    <div class="card-body">
-                      <h5 class="card-title">Corel Draw</h5>
-                      <p class="card-text">Short description of the course.</p>
-                      <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="card mb-4">
+                        <img src="course2.jpg" class="card-img-top" alt="Course 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Corel Draw</h5>
+                            <p class="card-text">Short description of the course.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <img src="course3.jpg" class="card-img-top" alt="Course 3">
-                    <div class="card-body">
-                      <h5 class="card-title">Python</h5>
-                      <p class="card-text">Short description of the course.</p>
-                      <a href="#" class="btn btn-primary">Learn More</a>
+                    <div class="card mb-4">
+                        <img src="course3.jpg" class="card-img-top" alt="Course 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">Short description of the course.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA section -->
-        <section id="cta" class="py-5 text-white bg-dark">
-            <div class="container text-center">
-                <h2>Ready to Join Us?</h2>
-                <p class="lead">Apply now and become a part of our vibrant community.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Apply Now</a>
-            </div>
-        </section>
+    <!-- CTA section -->
+    <section id="cta" class="py-5 text-white jumbotron-custom">
+        <div class="container text-center">
+            <h2>Ready to Join Us?</h2>
+            <p class="lead">Apply now and become a part of our vibrant community.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Apply Now</a>
+        </div>
+    </section>
 
-        <!-- Testimonials section -->
-        <section id="testimonials" class="py-5 bg-light">
-            <div class="container">
-              <h2 class="text-center">What Our Students Say</h2>
-              <div class="row">
+    <!-- Testimonials section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center" style="color: #084d9c;">What Our Students Say</h2>
+            <div class="row">
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <p class="card-text">"CollegeName has provided me with the skills and knowledge to succeed in my career."</p>
-                      <footer class="blockquote-footer">Student 1</footer>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">"CollegeName has provided me with the skills and knowledge to succeed in my career."</p>
+                            <footer class="blockquote-footer">Student 1</footer>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <p class="card-text">"The faculty and staff are very supportive and always willing to help."</p>
-                      <footer class="blockquote-footer">Student 2</footer>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">"The faculty and staff are very supportive and always willing to help."</p>
+                            <footer class="blockquote-footer">Student 2</footer>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <p class="card-text">"I have made lifelong friends and memories at CollegeName."</p>
-                      <footer class="blockquote-footer">Student 3</footer>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">"I have made lifelong friends and memories at CollegeName."</p>
+                            <footer class="blockquote-footer">Student 3</footer>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-        </section>
-          
-        <!-- Footer section -->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-              <p>&copy; 2024 CollegeName. All rights reserved.</p>
-              <ul class="list-inline">
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer-custom py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Jetbrains College. All rights reserved.</p>
+            <ul class="list-inline">
                 <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
                 <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
-              </ul>
-            </div>
-        </footer>
-          
-    </body>
+            </ul>
+        </div>
+    </footer>
+
+</body>
 </html>
