@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jetbrains Institute of Information Technology</title>
+
+  <!-- SEO metas -->
+  <meta name="description" content="Jetbrains Institute of Information Technology offers a range of computer & related short courses to equip students with digital and practical skills.">
+
+  <!-- Favicon link -->
+  <link rel="icon" href={% static "assets/images/logo.png" %} type="image/x-icon">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Beyond+Wonderland&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href={% static "assets/css/main.css" %}>
+
+  <!-- JS files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+  <!-- Unique and responsive navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href={% url "main" %}>
+        <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
+        Jetbrains College
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Developer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}
+  
+  {% endblock content %}
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <a href={% url "main" %} class="navbar-brand d-flex align-items-center">
+                <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="mr-3">
+                <h5>Jetbrains College</h5>
+              </a>
+              <p>At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
+            </div>
+            <div class="col-md-3">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="{% url "main" %} class="footer-link">Home</a></li>
+                <li><a href="#" class="footer-link">Courses</a></li>
+                <li><a href="#" class="footer-link">testify</a></li>
+                <li><a href="#" class="footer-link">Enroll</a></li>
+                <li><a href="#" class="footer-link">Developer</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h5>Follow Us</h5>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="text-center">
+            <p>&copy; 2024 Jetbrains College. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    
+      <!-- Internal JS -->
+      <script>
+        $(document).ready(function() {
+          // Preloader
+          $(window).on('load', function() {
+            $('#preloader').fadeOut('slow', function() {
+              $(this).remove();
+            });
+          });
+     
+          // Sticky Navbar
+          $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 50) {
+              $('.navbar').addClass('sticky');
+            } else {
+              $('.navbar').removeClass('sticky');
+            }
+          });
+     
+          // Smooth scrolling for navigation links
+          $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top - 70
+              }, 1000);
+            }
+          });
+        });
+      </script>
+    </body>
+    </html>
