@@ -9,4 +9,7 @@ urlpatterns = [
     path('desk/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('testify/', testify_view, name='testify'),
+
+    path('dashboard/', dashboard_view, name='dashboard'),
+    path('change-psw/', change_psw_view, name='change-pwd'),
 ]

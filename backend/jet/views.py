@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib import messages
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
+from .forms import *
+from django.contrib.auth.decorators import login_required
 
 def main_view(request):
     testimonies = Testimony.objects.all().order_by('-time')[:10]
@@ -27,7 +29,6 @@ def main_view(request):
     return render(request, 'main.html', {'testimonies':testimonies, 'blogs':blogs})
 
 def course_view(request):
-    
     return render(request, 'courses.html')
 
 def enroll_view(request):
@@ -94,3 +95,29 @@ def testify_view(request):
         return redirect('testify')
     
     return render(request, 'testify.html')
+
+@login_required
+def dashboard_view(request):
+    testimonies = Testimony.objects.all().order_by('-time')
+    blogs = Blogs.objects.all().order_by('-time')
+    enrollments = Enrollment.objects.all().order_by('-time')
+
+    return render(request, 'dashboard.html')
+
+@login_required
+def change_psw_view(request, user_id):
+    user = get_object_or_404(CustomUser, id=user_id)
+    
+    if request.method == 'POST':
+        change_form = ChangePasswordForm(user, request.POST)
+        if change_form.is_valid():
+            change_form.save()
+            update_session_auth_hash(request, change_form.user)
+            messages.success(request, f"Successfully changed your password.")
+            return redirect('dashboard')
+        else:
+            messages.error(request, f"Sorry, couldn't change your password.")
+    else:
+        change_form = ChangePasswordForm(user)
+    
+    return render(request, 'password_change.html', {'change_form':change_form, 'user':user})

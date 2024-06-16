@@ -47,6 +47,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "testify" %}>Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "logout" %}>Logout</a>
+          </li>
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href={% url "main" %}>Home</a>
           </li>
@@ -62,6 +79,7 @@
           <li class="nav-item">
             <a class="nav-link" href={% url "login" %}>Developer</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -89,7 +107,11 @@
                 <li><a href={% url "courses" %} class="footer-link">Courses</a></li>
                 <li><a href={% url "testify" %} class="footer-link">testify</a></li>
                 <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
+                {% if user.is_authenticated %}
+                <li><a href={% url "logout" %} class="footer-link">Logout</a></li>
+                {% else %}
                 <li><a href={% url "login" %} class="footer-link">Developer</a></li>
+                {% endif %}
               </ul>
             </div>
             <div class="col-md-3">
@@ -137,6 +159,38 @@
                 scrollTop: target.offset().top - 70
               }, 1000);
             }
+          });
+
+          // Dashboard functions
+          $('#changePasswordBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#changePasswordForm').show();
+          });
+          $('#manageTestimonialsBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#manageTestimonials').show();
+          });
+          $('#manageBlogsBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#manageBlogs').show();
+          });
+          $('#manageEnrollmentsBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#enrollmentsTable').show();
+          });
+          $('#addUserBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#addUser').show();
+          });
+          $('#uploadBlogBtn').click(function() {
+            $('#dashboardContent').hide();
+            $('.content > div').hide();
+            $('#uploadBlog').show();
           });
         });
       </script>
