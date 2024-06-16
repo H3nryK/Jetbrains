@@ -55,8 +55,16 @@
     <h2 class="text-center mb-4">What Our Students Say</h2>
     <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        {% for testimonial in testimonies %}
         <div class="carousel-item active">
+          <div class="testimonial-item">
+            <i class="fas fa-quote-left testimonial-quote"></i>
+            <p>"Wanna share your experience today?"</p>
+            <h5>Jetbrains Institute</h5>
+            <p class="text-muted">Developer</p>
+          </div>
+        </div>
+        {% for testimonial in testimonies %}
+        <div class="carousel-item">
           <div class="testimonial-item">
             <i class="fas fa-quote-left testimonial-quote"></i>
             <p>"{{ testimonial.message }}"</p>

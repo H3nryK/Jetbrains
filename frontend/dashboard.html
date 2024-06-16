@@ -76,8 +76,6 @@
     <a href="#" id="manageEnrollmentsBtn">Manage Enrollments</a>
     <a href="#" id="addUserBtn">Add Custom User</a>
     <a href="#" id="uploadBlogBtn">Upload Blog</a>
-    <a href="#" id="uploadCourseBtn">Upload Course</a>
-    <a href="#" id="manageCoursesBtn">Manage Courses</a>
   </div>
 
   <!-- Content -->
@@ -110,15 +108,51 @@
     <!-- Manage Testimonials Section -->
     <div id="manageTestimonials" style="display: none;">
       <h2>Manage Testimonials</h2>
-      <!-- Testimonials list will be dynamically populated here -->
-      <div id="testimonialsList"></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Enrollment ID</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="testimonialsList">
+          <tr>
+            <td>1</td>
+            <td>Kennedy</td>
+            <td>Henry@gmail.com</td>
+            <td>Computer</td>
+            <td>Call</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Manage Blogs Section -->
     <div id="manageBlogs" style="display: none;">
       <h2>Manage Blogs</h2>
-      <!-- Blogs list will be dynamically populated here -->
-      <div id="blogsList"></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Enrollment ID</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id=blogsList">
+          <tr>
+            <td>1</td>
+            <td>Kennedy</td>
+            <td>Henry@gmail.com</td>
+            <td>Computer</td>
+            <td>Call</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Add Custom User Section -->
@@ -161,48 +195,10 @@
       </form>
     </div>
 
-    <!-- Upload Course Form -->
-    <div id="uploadCourse" style="display: none;">
-      <h2>Upload Course</h2>
-      <form>
-        <div class="form-group">
-          <label for="courseTitle">Course Title</label>
-          <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title">
-        </div>
-        <div class="form-group">
-          <label for="courseDescription">Course Description</label>
-          <textarea class="form-control" id="courseDescription" rows="5" placeholder="Enter course description"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="courseImage">Course Image</label>
-          <input type="file" class="form-control" id="courseImage">
-        </div>
-        <button type="submit" class="btn btn-primary">Upload Course</button>
-      </form>
-    </div>
-
-    <!-- Manage Courses Table -->
-    <div id="manageCourses" style="display: none;">
-      <h2>Manage Courses</h2>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Course ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="coursesTable">
-          <!-- Courses will be dynamically populated here -->
-        </tbody>
-      </table>
-    </div>
-
     <!-- Enrollment List Table -->
     <div id="enrollmentsTable" style="display: none;">
       <h2>Enrollment List</h2>
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
           <tr>
             <th>Enrollment ID</th>
@@ -213,7 +209,13 @@
           </tr>
         </thead>
         <tbody id="enrollmentList">
-          <!-- Enrollments will be dynamically populated here -->
+          <tr>
+            <td>1</td>
+            <td>Kennedy</td>
+            <td>Henry@gmail.com</td>
+            <td>Computer</td>
+            <td>Call</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -253,16 +255,6 @@
         $('#dashboardContent').hide();
         $('.content > div').hide();
         $('#uploadBlog').show();
-      });
-      $('#uploadCourseBtn').click(function() {
-        $('#dashboardContent').hide();
-        $('.content > div').hide();
-        $('#uploadCourse').show();
-      });
-      $('#manageCoursesBtn').click(function() {
-        $('#dashboardContent').hide();
-        $('.content > div').hide();
-        $('#manageCourses').show();
       });
     });
   </script>
