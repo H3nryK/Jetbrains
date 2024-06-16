@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Courses - JIIT{% endblock title %}
+
+{% block content %}
+
+  <!-- Courses Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Our Courses</h2>
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <input class="form-control" id="searchInput" type="text" placeholder="Search for courses...">
+      </div>
+    </div>
+    <div class="row" id="courseList">
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/web.jpg" %} class="card-img-top" alt="Web Development">
+          <div class="card-body">
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">Learn to build modern websites using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/py.jpg" %} class="card-img-top" alt="Python Programming">
+          <div class="card-body">
+            <h5 class="card-title">Python Programming</h5>
+            <p class="card-text">Master the fundamentals of Python and build real-world applications.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/ms.jpg" %} class="card-img-top" alt="Computer Packages">
+          <div class="card-body">
+            <h5 class="card-title">Computer Packages</h5>
+            <p class="card-text">Learn the fundamentals of computing and basic skills.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more courses as needed -->
+    </div>
+  </div>
+
+{% endblock content %}

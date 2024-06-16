@@ -1,5 +1,92 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
 
 def main_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('number')
+        message = request.POST.get('message')
+
+        contact, created = Contact.objects.get_or_create(
+            name = name,
+            email = email,
+            phone = phone,
+            message = message
+        )
+
+        messages.success(request, "Thank you for contacting us.")
+
+        return redirect('main')
+
     return render(request, 'main.html')
+
+def course_view(request):
+    return render(request, 'courses.html')
+
+def enroll_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        course = request.POST.get('course')
+        info = request.POST.get('message')
+
+        enroll, created = Enrollment.objects.get_or_create(
+            name = name,
+            email = email,
+            phone = phone,
+            course = course,
+            info = info
+        )
+
+        messages.success(request, "Thank you for Joining us.")
+
+        return redirect('enroll')
+    
+    return render(request, 'enroll.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, f"Welcome {username}.")
+            return redirect('dashboard')
+        else:
+            messages.error(request, "Sorry, this isn't your desk.")
+
+    else:
+
+        return render(request, 'login.html')
+    
+def logout_view(request):
+    logout(request)
+    messages.success(request, "See you buddy.")
+    return redirect('main')
+
+def testify_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('emial')
+        course = request.POST.get('course')
+        message = request.POST.get('testimony')
+
+        testify, created = Testimony.objects.get_or_create(
+            name = name,
+            email = email,
+            course = course,
+            message = message
+        )
+
+        messages.success(request, "Thank you for sharing your experience.")
+
+        return redirect('testify')
+    
+    return render(request, 'testify.html')

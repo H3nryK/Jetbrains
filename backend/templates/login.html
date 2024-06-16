@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Developer - JIIT{% endblock title %}
+
+{% block content %}
+
+  <!-- Login Form -->
+  <div class="container my-5" style="padding-top: 60px;">
+    <h2 class="text-center mb-4">Developer's Desk</h2>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form action={% url "login" %} method='post'>
+            {% csrf_token %}
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name='username' placeholder="Enter your username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" name='password' placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sit Down</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -51,16 +51,16 @@
             <a class="nav-link" href={% url "main" %}>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Courses</a>
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Testify</a>
+            <a class="nav-link" href={% url "tetsify" %}>Testify</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Enroll</a>
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Developer</a>
+            <a class="nav-link" href={% url "login" %}>Developer</a>
           </li>
         </ul>
       </div>
@@ -85,11 +85,11 @@
             <div class="col-md-3">
               <h5>Quick Links</h5>
               <ul class="list-unstyled">
-                <li><a href="{% url "main" %} class="footer-link">Home</a></li>
-                <li><a href="#" class="footer-link">Courses</a></li>
-                <li><a href="#" class="footer-link">testify</a></li>
-                <li><a href="#" class="footer-link">Enroll</a></li>
-                <li><a href="#" class="footer-link">Developer</a></li>
+                <li><a href={% url "main" %} class="footer-link">Home</a></li>
+                <li><a href={% url "courses" %} class="footer-link">Courses</a></li>
+                <li><a href={% url "testify" %} class="footer-link">testify</a></li>
+                <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
+                <li><a href={% url "login" %} class="footer-link">Developer</a></li>
               </ul>
             </div>
             <div class="col-md-3">
