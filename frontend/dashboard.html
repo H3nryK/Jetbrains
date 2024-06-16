@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard for Jetbrains College">
+  <title>Dashboard - Jetbrains College</title>
+
+  <!-- Favicon link -->
+  <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Beyond+Wonderland&display=swap" rel="stylesheet">
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <style>
+    body {
+      padding-top: 56px;
+    }
+    .sidebar {
+      height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
+      background-color: #084d9c;
+      position: fixed;
+      top: 56px; /* Start below the navbar */
+      left: 0;
+      width: 250px;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-align: center;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #96113b;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Jetbrains College Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="changePasswordBtn">Change Password</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#" id="manageTestimonialsBtn">Manage Testimonials</a>
+    <a href="#" id="manageBlogsBtn">Manage Blogs</a>
+    <a href="#" id="manageEnrollmentsBtn">Manage Enrollments</a>
+    <a href="#" id="addUserBtn">Add Custom User</a>
+    <a href="#" id="uploadBlogBtn">Upload Blog</a>
+    <a href="#" id="uploadCourseBtn">Upload Course</a>
+    <a href="#" id="manageCoursesBtn">Manage Courses</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div id="dashboardContent">
+      <h2>Welcome to the Admin Dashboard</h2>
+      <p>Select an option from the sidebar to get started.</p>
+    </div>
+
+    <!-- Change Password Form -->
+    <div id="changePasswordForm" style="display: none;">
+      <h2>Change Password</h2>
+      <form>
+        <div class="form-group">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+        </div>
+        <div class="form-group">
+          <label for="confirmNewPassword">Confirm New Password</label>
+          <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm new password">
+        </div>
+        <button type="submit" class="btn btn-primary">Change Password</button>
+      </form>
+    </div>
+
+    <!-- Manage Testimonials Section -->
+    <div id="manageTestimonials" style="display: none;">
+      <h2>Manage Testimonials</h2>
+      <!-- Testimonials list will be dynamically populated here -->
+      <div id="testimonialsList"></div>
+    </div>
+
+    <!-- Manage Blogs Section -->
+    <div id="manageBlogs" style="display: none;">
+      <h2>Manage Blogs</h2>
+      <!-- Blogs list will be dynamically populated here -->
+      <div id="blogsList"></div>
+    </div>
+
+    <!-- Add Custom User Section -->
+    <div id="addUser" style="display: none;">
+      <h2>Add Custom User</h2>
+      <form>
+        <div class="form-group">
+          <label for="userName">User Name</label>
+          <input type="text" class="form-control" id="userName" placeholder="Enter user name">
+        </div>
+        <div class="form-group">
+          <label for="userEmail">Email Address</label>
+          <input type="email" class="form-control" id="userEmail" placeholder="Enter email address">
+        </div>
+        <div class="form-group">
+          <label for="userPassword">Password</label>
+          <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary">Add User</button>
+      </form>
+    </div>
+
+    <!-- Upload Blog Form -->
+    <div id="uploadBlog" style="display: none;">
+      <h2>Upload Blog</h2>
+      <form>
+        <div class="form-group">
+          <label for="blogTitle">Blog Title</label>
+          <input type="text" class="form-control" id="blogTitle" placeholder="Enter blog title">
+        </div>
+        <div class="form-group">
+          <label for="blogContent">Blog Content</label>
+          <textarea class="form-control" id="blogContent" rows="5" placeholder="Enter blog content"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="blogImage">Blog Image</label>
+          <input type="file" class="form-control" id="blogImage">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Blog</button>
+      </form>
+    </div>
+
+    <!-- Upload Course Form -->
+    <div id="uploadCourse" style="display: none;">
+      <h2>Upload Course</h2>
+      <form>
+        <div class="form-group">
+          <label for="courseTitle">Course Title</label>
+          <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title">
+        </div>
+        <div class="form-group">
+          <label for="courseDescription">Course Description</label>
+          <textarea class="form-control" id="courseDescription" rows="5" placeholder="Enter course description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="courseImage">Course Image</label>
+          <input type="file" class="form-control" id="courseImage">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Course</button>
+      </form>
+    </div>
+
+    <!-- Manage Courses Table -->
+    <div id="manageCourses" style="display: none;">
+      <h2>Manage Courses</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Course ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="coursesTable">
+          <!-- Courses will be dynamically populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Enrollment List Table -->
+    <div id="enrollmentsTable" style="display: none;">
+      <h2>Enrollment List</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Enrollment ID</th>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="enrollmentList">
+          <!-- Enrollments will be dynamically populated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- JS files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#changePasswordBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#changePasswordForm').show();
+      });
+      $('#manageTestimonialsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageTestimonials').show();
+      });
+      $('#manageBlogsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageBlogs').show();
+      });
+      $('#manageEnrollmentsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#enrollmentsTable').show();
+      });
+      $('#addUserBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#addUser').show();
+      });
+      $('#uploadBlogBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#uploadBlog').show();
+      });
+      $('#uploadCourseBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#uploadCourse').show();
+      });
+      $('#manageCoursesBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageCourses').show();
+      });
+    });
+  </script>
+</body>
+</html>
