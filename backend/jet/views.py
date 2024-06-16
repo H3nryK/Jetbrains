@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
 
 def main_view(request):
     if request.method == 'POST':
@@ -46,3 +47,46 @@ def enroll_view(request):
         return redirect('enroll')
     
     return render(request, 'enroll.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, f"Welcome {username}.")
+            return redirect('dashboard')
+        else:
+            messages.error(request, "Sorry, this isn't your desk.")
+
+    else:
+
+        return render(request, 'login.html')
+    
+def logout_view(request):
+    logout(request)
+    messages.success(request, "See you buddy.")
+    return redirect('main')
+
+def testify_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('emial')
+        course = request.POST.get('course')
+        message = request.POST.get('testimony')
+
+        testify, created = Testimony.objects.get_or_create(
+            name = name,
+            email = email,
+            course = course,
+            message = message
+        )
+
+        messages.success(request, "Thank you for sharing your experience.")
+
+        return redirect('testify')
+    
+    return render(request, 'testify.html')
