@@ -4,6 +4,9 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 
 def main_view(request):
+    testimonies = Testimony.objects.all().order_by('-time')[:10]
+    blogs = Blogs.objects.all().order_by('-time')[:3]
+
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -21,7 +24,7 @@ def main_view(request):
 
         return redirect('main')
 
-    return render(request, 'main.html')
+    return render(request, 'main.html', {'testimonies':testimonies, 'blogs':blogs})
 
 def course_view(request):
     return render(request, 'courses.html')
