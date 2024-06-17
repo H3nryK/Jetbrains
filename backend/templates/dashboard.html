@@ -1,10 +1,125 @@
-{% extends "base.html" %}
-
 {% load static %}
 
-{% block title %}Dashboard - JIIT{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block content %}
+  <title>Dashboard - JIIT</title>
+
+  <!-- SEO metas -->
+  <meta name="description" content="Jetbrains Institute of Information Technology offers a range of computer & related short courses to equip students with digital and practical skills.">
+
+  <!-- Favicon link -->
+  <link rel="icon" href={% static "assets/images/logo.png" %} type="image/x-icon">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Beyond+Wonderland&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href={% static "assets/css/main.css" %}>
+
+  <!-- JS files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  {% comment %} Internal CSS {% endcomment %}
+  <style>
+    body {
+      padding-top: 56px;
+    }
+    .sidebar {
+      height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
+      background-color: #084d9c;
+      position: fixed;
+      top: 56px; /* Start below the navbar */
+      left: 0;
+      width: 250px;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-align: center;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #96113b;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+      <div class="loader"></div>
+  </div>
+
+  <!-- Unique and responsive navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href={% url "main" %}>
+        <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
+        Jetbrains College
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "testify" %}>Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "logout" %}>Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "testify" %}>Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "login" %}>Developer</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -95,4 +210,56 @@
     </div>
   </div>
 
-{% endblock content %}
+  {% comment %} Inrternal {% endcomment %}
+  <script>
+    $(document).ready(function() {
+      // Preloader
+      $(window).on('load', function() {
+        $('#preloader').fadeOut('slow', function() {
+          $(this).remove();
+        });
+      });
+ 
+      // Sticky Navbar
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+          $('.navbar').addClass('sticky');
+        } else {
+          $('.navbar').removeClass('sticky');
+        }
+      });
+ 
+      // Smooth scrolling for navigation links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top - 70
+          }, 1000);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#changePasswordBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#changePasswordForm').show();
+      });
+      $('#manageTestimonialsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageTestimonials').show();
+      });
+      $('#manageEnrollmentsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#enrollmentsTable').show();
+      });
+    });
+  </script>
+</body>
+</html>
