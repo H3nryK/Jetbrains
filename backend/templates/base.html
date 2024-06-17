@@ -87,7 +87,7 @@
   </nav>
 
   {% include "_messages.html" %}
-  
+
   {% block content %}
   
   {% endblock content %}
@@ -134,35 +134,36 @@
         </div>
       </footer>
     
-      <!-- Internal JS -->
-      <script>
-        $(document).ready(function() {
-          // Preloader
-          $(window).on('load', function() {
-            $('#preloader').fadeOut('slow', function() {
-              $(this).remove();
-            });
-          });
-     
-          // Sticky Navbar
-          $(window).on('scroll', function() {
-            if ($(window).scrollTop() > 50) {
-              $('.navbar').addClass('sticky');
-            } else {
-              $('.navbar').removeClass('sticky');
-            }
-          });
-     
-          // Smooth scrolling for navigation links
-          $('a[href^="#"]').on('click', function(event) {
-            var target = $(this.getAttribute('href'));
-            if (target.length) {
-              event.preventDefault();
-              $('html, body').animate({
-                scrollTop: target.offset().top - 70
-              }, 1000);
-            }
-          });
-      </script>
-    </body>
-    </html>
+  <!-- Internal JS -->
+  <script>
+    $(document).ready(function() {
+      // Preloader
+      $(window).on('load', function() {
+        $('#preloader').fadeOut('slow', function() {
+          $(this).remove();
+        });
+      });
+  
+      // Sticky Navbar
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+          $('.navbar').addClass('sticky');
+        } else {
+          $('.navbar').removeClass('sticky');
+        }
+      });
+  
+      // Smooth scrolling for navigation links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top - 70
+          }, 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

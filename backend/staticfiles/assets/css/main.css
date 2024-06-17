@@ -110,34 +110,6 @@ h1, h2, h3 {
   color: #fff;
 }
 
-/* Dashboard */
-.sidebar {
-  height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
-  background-color: #084d9c;
-  position: fixed;
-  top: 56px; /* Start below the navbar */
-  left: 0;
-  width: 250px;
-  padding-top: 20px;
-}
-.sidebar a {
-  padding: 15px;
-  text-align: center;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-}
-.sidebar a:hover {
-  background-color: #96113b;
-}
-.content {
-  margin-left: 250px;
-  padding: 20px;
-}
-.card {
-  margin-bottom: 20px;
-}
-
 /* Hero */
 
 .jumbotron {
