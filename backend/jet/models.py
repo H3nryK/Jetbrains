@@ -31,13 +31,3 @@ class Testimony(models.Model):
 
     def __str__(self):
         return self.name
-    
-class Blogs(models.Model):
-    title = models.CharField(max_length=255)
-    picture = models.ImageField(upload_to='blogs/')
-    author = models.CharField(max_length=255)
-    contene = models.TextField()
-    time = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return self.title

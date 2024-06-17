@@ -1,18 +1,130 @@
-{% extends "base.html" %}
-
 {% load static %}
 
-{% block title %}Dashboard - JIIT{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block content %}
+  <title>Dashboard - JIIT</title>
+
+  <!-- SEO metas -->
+  <meta name="description" content="Jetbrains Institute of Information Technology offers a range of computer & related short courses to equip students with digital and practical skills.">
+
+  <!-- Favicon link -->
+  <link rel="icon" href={% static "assets/images/logo.png" %} type="image/x-icon">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Beyond+Wonderland&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href={% static "assets/css/main.css" %}>
+
+  <!-- JS files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  {% comment %} Internal CSS {% endcomment %}
+  <style>
+    body {
+      padding-top: 56px;
+    }
+    .sidebar {
+      height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
+      background-color: #084d9c;
+      position: fixed;
+      top: 56px; /* Start below the navbar */
+      left: 0;
+      width: 250px;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-align: center;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #96113b;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+      <div class="loader"></div>
+  </div>
+
+  <!-- Unique and responsive navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href={% url "main" %}>
+        <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
+        Jetbrains College
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "testify" %}>Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "logout" %}>Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href={% url "main" %}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "courses" %}>Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "testify" %}>Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "login" %}>Developer</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="#" id="manageTestimonialsBtn">Manage Testimonials</a>
     <a href="#" id="manageEnrollmentsBtn">Manage Enrollments</a>
-    <a href="#" id="manageBlogsBtn">Manage Blogs</a>
-    <a href="#" id="uploadBlogBtn">Upload Blog</a>
-    <a href="#" id="addUserBtn">Add Custom User</a>
     <a href="#" id="changePasswordBtn">Change Password</a>
   </div>
 
@@ -26,19 +138,9 @@
     <!-- Change Password Form -->
     <div id="changePasswordForm" style="display: none;">
       <h2>Change Password</h2>
-      <form>
-        <div class="form-group">
-          <label for="currentPassword">Current Password</label>
-          <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
-        </div>
-        <div class="form-group">
-          <label for="newPassword">New Password</label>
-          <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
-        </div>
-        <div class="form-group">
-          <label for="confirmNewPassword">Confirm New Password</label>
-          <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm new password">
-        </div>
+      <form method='post' action={% url "change-pwd" %}>
+        {% csrf_token %}
+        {{ change_form }}
         <button type="submit" class="btn btn-primary">Change Password</button>
       </form>
     </div>
@@ -49,88 +151,29 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Enrollment ID</th>
-            <th>Student Name</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Course</th>
-            <th>Actions</th>
+            <th>message</th>
+            <th>time</th>
           </tr>
         </thead>
         <tbody id="testimonialsList">
+          {% for testify in testimonies %}
           <tr>
-            <td>1</td>
-            <td>Kennedy</td>
-            <td>Henry@gmail.com</td>
-            <td>Computer</td>
-            <td>Call</td>
+            <td>{{ testify.name }}</td>
+            <td>{{ testify.email }}/td>
+            <td>{{ testify.course }}</td>
+            <td>{{ testify.message }}</td>
+            <td>{{ testify.time }}</td>
           </tr>
+          {% empty %}
+          <tr>
+            <td colspan='5'>No Testimonials yet.</td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
-    </div>
-
-    <!-- Manage Blogs Section -->
-    <div id="manageBlogs" style="display: none;">
-      <h2>Manage Blogs</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Enrollment ID</th>
-            <th>Student Name</th>
-            <th>Email</th>
-            <th>Course</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id=blogsList">
-          <tr>
-            <td>1</td>
-            <td>Kennedy</td>
-            <td>Henry@gmail.com</td>
-            <td>Computer</td>
-            <td>Call</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Add Custom User Section -->
-    <div id="addUser" style="display: none;">
-      <h2>Add Custom User</h2>
-      <form>
-        <div class="form-group">
-          <label for="userName">User Name</label>
-          <input type="text" class="form-control" id="userName" placeholder="Enter user name">
-        </div>
-        <div class="form-group">
-          <label for="userEmail">Email Address</label>
-          <input type="email" class="form-control" id="userEmail" placeholder="Enter email address">
-        </div>
-        <div class="form-group">
-          <label for="userPassword">Password</label>
-          <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
-        </div>
-        <button type="submit" class="btn btn-primary">Add User</button>
-      </form>
-    </div>
-
-    <!-- Upload Blog Form -->
-    <div id="uploadBlog" style="display: none;">
-      <h2>Upload Blog</h2>
-      <form>
-        <div class="form-group">
-          <label for="blogTitle">Blog Title</label>
-          <input type="text" class="form-control" id="blogTitle" placeholder="Enter blog title">
-        </div>
-        <div class="form-group">
-          <label for="blogContent">Blog Content</label>
-          <textarea class="form-control" id="blogContent" rows="5" placeholder="Enter blog content"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="blogImage">Blog Image</label>
-          <input type="file" class="form-control" id="blogImage">
-        </div>
-        <button type="submit" class="btn btn-primary">Upload Blog</button>
-      </form>
     </div>
 
     <!-- Enrollment List Table -->
@@ -139,24 +182,84 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Enrollment ID</th>
-            <th>Student Name</th>
+            <th>Name</th>
             <th>Email</th>
+            <th>Phone</th>
             <th>Course</th>
-            <th>Actions</th>
+            <th>Info</th>
+            <th>time</th>
           </tr>
         </thead>
         <tbody id="enrollmentList">
+          {% for enroll in enrollments %}
           <tr>
-            <td>1</td>
-            <td>Kennedy</td>
-            <td>Henry@gmail.com</td>
-            <td>Computer</td>
-            <td>Call</td>
+            <td>{{ enroll.name }}</td>
+            <td>{{ enroll.email }}/td>
+            <td>{{ enroll.phone }}</td>
+            <td>{{ enroll.course }}</td>
+            <td>{{ enroll.info }}</td>
+            <td>{{ enroll.time }}</td>
           </tr>
+          {% empty %}
+          <tr>
+            <td colspan='6'>No enrollments yet.</td>
+          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
 
-{% endblock content %}
+  {% comment %} Inrternal {% endcomment %}
+  <script>
+    $(document).ready(function() {
+      // Preloader
+      $(window).on('load', function() {
+        $('#preloader').fadeOut('slow', function() {
+          $(this).remove();
+        });
+      });
+ 
+      // Sticky Navbar
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+          $('.navbar').addClass('sticky');
+        } else {
+          $('.navbar').removeClass('sticky');
+        }
+      });
+ 
+      // Smooth scrolling for navigation links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top - 70
+          }, 1000);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('#changePasswordBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#changePasswordForm').show();
+      });
+      $('#manageTestimonialsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageTestimonials').show();
+      });
+      $('#manageEnrollmentsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#enrollmentsTable').show();
+      });
+    });
+  </script>
+</body>
+</html>
