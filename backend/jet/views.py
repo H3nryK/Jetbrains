@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 
 def main_view(request):
     testimonies = Testimony.objects.all().order_by('-time')[:10]
-    blogs = Blogs.objects.all().order_by('-time')[:3]
 
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -99,7 +98,6 @@ def testify_view(request):
 @login_required
 def dashboard_view(request):
     testimonies = Testimony.objects.all().order_by('-time')
-    blogs = Blogs.objects.all().order_by('-time')
     enrollments = Enrollment.objects.all().order_by('-time')
 
     return render(request, 'dashboard.html')
