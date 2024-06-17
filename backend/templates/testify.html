@@ -9,6 +9,7 @@
   <!-- Testify Form -->
   <div class="container my-5" style="padding-top: 60px;">
     <h2 class="text-center mb-4">Share Your Experience</h2>
+    {% include "_messages.html" %}
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <form action={% url "testify" %} method='post'>

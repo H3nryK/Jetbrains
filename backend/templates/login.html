@@ -9,6 +9,7 @@
   <!-- Login Form -->
   <div class="container my-5" style="padding-top: 60px;">
     <h2 class="text-center mb-4">Developer's Desk</h2>
+    {% include "_messages.html" %}
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <form action={% url "login" %} method='post'>

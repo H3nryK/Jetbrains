@@ -9,6 +9,7 @@
   <!-- Enrollment Form -->
   <div class="container my-5" style="padding-top: 60px;">
     <h2 class="text-center mb-4">Enroll in Our Courses</h2>
+    {% include "_messages.html" %}
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <form action={% url "enroll" %} method='post'>
@@ -25,9 +26,9 @@
           <div class="form-group">
             <label for="course">Select Course</label>
             <select class="form-control" id="course" name='course'>
-              <option>Web Development</option>
-              <option>Python Programming</option>
-              <option>Computer Packages</option>
+              <option value='web'>Web Development</option>
+              <option value='python'>Python Programming</option>
+              <option value='packages'>Computer Packages</option>
             </select>
           </div>
           <div class="form-group">
