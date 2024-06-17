@@ -94,34 +94,6 @@
     </div>
   </div>
 
-  <!-- Blogs -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4">Blogs</h2>
-    <div class="row">
-      {% for blog in blogs %}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src={% static "assets/images/news/course.jpg" %} class="card-img-top" alt="News Image">
-          <div class="card-body">
-            <h5 class="card-title">New Course Launched</h5>
-            <p class="card-text">We've added a new course on Machine Learning to our curriculum. Enroll now and stay ahead of the curve!</p>
-            <a href="#" class="btn btn-primary">Read More</a>
-          </div>
-        </div>
-      </div>
-      {% empty %}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src={% static "assets/images/news/success.jpg" %} class="card-img-top" alt="News Image">
-          <div class="card-body">
-            <h5 class="card-title">No Blogs yet</h5>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-
   <!-- Contact Section -->
   <div class="container my-5">
     <h2 class="text-center mb-4 animate__animated animate__fadeInDown">Get in Touch</h2>

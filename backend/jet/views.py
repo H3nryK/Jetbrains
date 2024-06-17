@@ -25,7 +25,7 @@ def main_view(request):
 
         return redirect('main')
 
-    return render(request, 'main.html', {'testimonies':testimonies, 'blogs':blogs})
+    return render(request, 'main.html', {'testimonies':testimonies})
 
 def course_view(request):
     return render(request, 'courses.html')
