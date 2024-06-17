@@ -114,7 +114,7 @@ def dashboard_view(request):
 
     return render(request, 'dashboard.html', {'testimonies':testimonies, 'enrollments':enrollments, 'change_form':change_form})
 
-def approve_testimonials(request, testimonial_id):
+def approve_testimonial(request, testimonial_id):
     if request.method == 'POST':
         testimonial = get_object_or_404(Testimony, pk=testimonial_id)
         testimonial.approved = True

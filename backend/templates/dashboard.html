@@ -192,15 +192,15 @@
           {% for testify in testimonies %}
           <tr>
             <td>{{ testify.name }}</td>
-            <td>{{ testify.email }}/td>
+            <td>{{ testify.email }}</td>
             <td>{{ testify.course }}</td>
             <td>{{ testify.message }}</td>
             <td>{{ testify.time }}</td>
             <td>
               {% if not testify.approved %}
-              <form method="post" action="{% url 'approve_testimonial' testimonial.id %}">
+              <form method="post" action="{% url 'approve_testimonial' testify.id %}">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-success">Approve</button>
+                  <button type="submit" class="btn btn-error">Approve</button>
               </form>
               {% else %}
               <span class="badge badge-success">Approved</span>
@@ -209,7 +209,7 @@
           </tr>
           {% empty %}
           <tr>
-            <td colspan='5'>No Testimonials yet.</td>
+            <td colspan='6'>No Testimonials yet.</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -234,7 +234,7 @@
           {% for enroll in enrollments %}
           <tr>
             <td>{{ enroll.name }}</td>
-            <td>{{ enroll.email }}/td>
+            <td>{{ enroll.email }}</td>
             <td>{{ enroll.phone }}</td>
             <td>{{ enroll.course }}</td>
             <td>{{ enroll.info }}</td>
