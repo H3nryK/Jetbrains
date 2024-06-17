@@ -185,6 +185,7 @@
             <th>Course</th>
             <th>message</th>
             <th>time</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody id="testimonialsList">
@@ -195,6 +196,16 @@
             <td>{{ testify.course }}</td>
             <td>{{ testify.message }}</td>
             <td>{{ testify.time }}</td>
+            <td>
+              {% if not testify.approved %}
+              <form method="post" action="{% url 'approve_testimonial' testimonial.id %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-success">Approve</button>
+              </form>
+              {% else %}
+              <span class="badge badge-success">Approved</span>
+              {% endif %}
+          </td>
           </tr>
           {% empty %}
           <tr>
