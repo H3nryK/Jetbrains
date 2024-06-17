@@ -27,13 +27,14 @@
   <!-- JS files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+  <!-- Preloader -->
+  <div id="preloader">
+      <div class="loader"></div>
+  </div>
 
   <!-- Unique and responsive navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -59,6 +60,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href={% url "logout" %}>Logout</a>
@@ -131,35 +135,36 @@
         </div>
       </footer>
     
-      <!-- Internal JS -->
-      <script>
-        $(document).ready(function() {
-          // Preloader
-          $(window).on('load', function() {
-            $('#preloader').fadeOut('slow', function() {
-              $(this).remove();
-            });
-          });
-     
-          // Sticky Navbar
-          $(window).on('scroll', function() {
-            if ($(window).scrollTop() > 50) {
-              $('.navbar').addClass('sticky');
-            } else {
-              $('.navbar').removeClass('sticky');
-            }
-          });
-     
-          // Smooth scrolling for navigation links
-          $('a[href^="#"]').on('click', function(event) {
-            var target = $(this.getAttribute('href'));
-            if (target.length) {
-              event.preventDefault();
-              $('html, body').animate({
-                scrollTop: target.offset().top - 70
-              }, 1000);
-            }
-          });
-      </script>
-    </body>
-    </html>
+  <!-- Internal JS -->
+  <script>
+    $(document).ready(function() {
+      // Preloader
+      $(window).on('load', function() {
+        $('#preloader').fadeOut('slow', function() {
+          $(this).remove();
+        });
+      });
+  
+      // Sticky Navbar
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 50) {
+          $('.navbar').addClass('sticky');
+        } else {
+          $('.navbar').removeClass('sticky');
+        }
+      });
+  
+      // Smooth scrolling for navigation links
+      $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top - 70
+          }, 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

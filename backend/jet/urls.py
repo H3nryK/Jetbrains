@@ -11,5 +11,5 @@ urlpatterns = [
     path('testify/', testify_view, name='testify'),
 
     path('dashboard/', dashboard_view, name='dashboard'),
-    path('change-psw/', change_psw_view, name='change-pwd'),
+    path('approve_testimonial/<int:testimonial_id>/', approve_testimonial, name='approve_testimonial'),
 ]

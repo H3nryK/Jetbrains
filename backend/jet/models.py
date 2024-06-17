@@ -28,6 +28,8 @@ class Testimony(models.Model):
     course = models.CharField(max_length=255)
     message = models.TextField()
     time = models.DateTimeField(default=timezone.now)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+    
