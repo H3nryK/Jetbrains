@@ -100,22 +100,21 @@ def dashboard_view(request):
     testimonies = Testimony.objects.all().order_by('-time')
     enrollments = Enrollment.objects.all().order_by('-time')
 
-    return render(request, 'dashboard.html')
+    return render(request, 'dashboard.html', {'testimonies':testimonies, 'enrollments':enrollments})
 
 @login_required
-def change_psw_view(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
+def change_psw_view(request):
     
     if request.method == 'POST':
-        change_form = ChangePasswordForm(user, request.POST)
+        change_form = ChangePasswordForm(request.user, request.POST)
         if change_form.is_valid():
-            change_form.save()
-            update_session_auth_hash(request, change_form.user)
+            user = change_form.save()
+            update_session_auth_hash(request, user)
             messages.success(request, f"Successfully changed your password.")
             return redirect('dashboard')
         else:
             messages.error(request, f"Sorry, couldn't change your password.")
     else:
-        change_form = ChangePasswordForm(user)
+        change_form = ChangePasswordForm(request.user)
     
-    return render(request, 'password_change.html', {'change_form':change_form, 'user':user})
+    return render(request, 'dashboard.html', {'change_form':change_form})
