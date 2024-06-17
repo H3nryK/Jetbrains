@@ -99,11 +99,6 @@ def testify_view(request):
 def dashboard_view(request):
     testimonies = Testimony.objects.all().order_by('-time')
     enrollments = Enrollment.objects.all().order_by('-time')
-
-    return render(request, 'dashboard.html', {'testimonies':testimonies, 'enrollments':enrollments})
-
-@login_required
-def change_psw_view(request):
     
     if request.method == 'POST':
         change_form = ChangePasswordForm(request.user, request.POST)
@@ -116,5 +111,5 @@ def change_psw_view(request):
             messages.error(request, f"Sorry, couldn't change your password.")
     else:
         change_form = ChangePasswordForm(request.user)
-    
-    return render(request, 'dashboard.html', {'change_form':change_form})
+
+    return render(request, 'dashboard.html', {'testimonies':testimonies, 'enrollments':enrollments, 'change_form':change_form})

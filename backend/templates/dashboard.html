@@ -31,16 +31,18 @@
   {% comment %} Internal CSS {% endcomment %}
   <style>
     body {
-      padding-top: 56px;
+      padding-top: 65px;
     }
     .sidebar {
       height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
       background-color: #084d9c;
       position: fixed;
-      top: 56px; /* Start below the navbar */
+      top: 65px; /* Start below the navbar */
       left: 0;
       width: 250px;
       padding-top: 20px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(0);
     }
     .sidebar a {
       padding: 15px;
@@ -52,12 +54,33 @@
     .sidebar a:hover {
       background-color: #96113b;
     }
+    .sidebar-toggler {
+      display: none;
+    }
     .content {
       margin-left: 250px;
       padding: 20px;
     }
     .card {
       margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-250px);
+      }
+      .sidebar.active {
+        transform: translateX(0);
+      }
+      .sidebar-toggler {
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
     }
   </style>
 
@@ -75,6 +98,9 @@
         <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
         Jetbrains College
       </a>
+      <button class="navbar-toggler sidebar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -138,9 +164,10 @@
     <!-- Change Password Form -->
     <div id="changePasswordForm" style="display: none;">
       <h2>Change Password</h2>
-      <form method='post' action={% url "change-pwd" %}>
+      <form method='post'>
         {% csrf_token %}
         {{ change_form }}
+        <br>
         <button type="submit" class="btn btn-primary">Change Password</button>
       </form>
     </div>
@@ -209,6 +236,31 @@
       </table>
     </div>
   </div>
+  
+  <script>
+    $(document).ready(function() {   
+      // Toggle sidebar on mobile
+      $('.sidebar-toggler').click(function() {
+        $('.sidebar').toggleClass('active');
+      });
+
+      $('#changePasswordBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#changePasswordForm').show();
+      });
+      $('#manageTestimonialsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#manageTestimonials').show();
+      });
+      $('#manageEnrollmentsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#enrollmentsTable').show();
+      });
+    });
+  </script>
 
   {% comment %} Inrternal {% endcomment %}
   <script>
@@ -242,24 +294,5 @@
     });
   </script>
 
-  <script>
-    $(document).ready(function() {
-      $('#changePasswordBtn').click(function() {
-        $('#dashboardContent').hide();
-        $('.content > div').hide();
-        $('#changePasswordForm').show();
-      });
-      $('#manageTestimonialsBtn').click(function() {
-        $('#dashboardContent').hide();
-        $('.content > div').hide();
-        $('#manageTestimonials').show();
-      });
-      $('#manageEnrollmentsBtn').click(function() {
-        $('#dashboardContent').hide();
-        $('.content > div').hide();
-        $('#enrollmentsTable').show();
-      });
-    });
-  </script>
 </body>
 </html>
