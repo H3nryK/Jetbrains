@@ -26,8 +26,9 @@ class Testimony(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(null=True, blank=True)
     course = models.CharField(max_length=255)
-    message = models.TextField(null=True)
+    message = models.TextField()
     time = models.DateTimeField(default=timezone.now)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
