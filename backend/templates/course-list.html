@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Course-List - JIIT{% endblock title %}
+
+{% block content %}
+
+  <!-- Page Content -->
+  <div class="container mt-5" style="padding-top: 65px;">
+    <h2 class="text-center mb-4">Training Requirements</h2>
+    <p class="text-center">At Jetbrains College, we require students to carry 1 photocopy of ID/ Birth Certificate, 1 passport photo & 1 A4 size booklet on admission.</p>
+
+    <h2 class="text-center mb-4">Our Courses</h2>
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <input class="form-control" id="searchInput" type="text" placeholder="Search for courses...">
+      </div>
+    </div>
+    
+    <div class="course-category" id="computer-packages">
+      <h3>Computer Packages</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Introduction to Computer</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Word processor</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Spreadsheet</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Database</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Presentation</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Publication</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Internet</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>IT-Security</td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="graphic-design">
+      <h3>Graphic Design</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Corel Draw</td>
+              <td>1 Month</td>
+              <td>Ksh. 3,000</td>
+            </tr>
+            <tr>
+              <td>Corel paint</td>
+              <td>1 Month</td>
+              <td>Ksh. 2,500</td>
+            </tr>
+            <tr>
+              <td>Illustrator</td>
+              <td>1.5 months</td>
+              <td>Ksh. 4,000</td>
+            </tr>
+            <tr>
+              <td>Photoshop</td>
+              <td>1 Month</td>
+              <td>Ksh. 3,000</td>
+            </tr>
+            <tr>
+              <td>InDesign</td>
+              <td>1 Month</td>
+              <td>Ksh. 2,500</td>
+            </tr>
+            <tr>
+              <td>InkSpace</td>
+              <td>1 Month</td>
+              <td>Ksh. 3,000</td>
+            </tr>
+            <tr>
+              <td>AfterEffects</td>
+              <td>1 Month</td>
+              <td>ksh. 6,000</td>
+            </tr>
+            <tr>
+              <td>Adobe XD</td>
+              <td>1.5 Months</td>
+              <td>Ksh. 6,500</td>
+            </tr>
+            <tr>
+              <td>Premiere</td>
+              <td>1.5 Months</td>
+              <td>Ksh. 8,500</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="programming">
+      <h3>Programming / Coding</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>HTML/CSS</td>
+              <td>1 Month</td>
+              <td>Ksh. 5,000</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>1 Month</td>
+              <td>Ksh. 4,000</td>
+            </tr>
+            <tr>
+              <td>PHP/MySql</td>
+              <td>1 month</td>
+              <td>Ksh. 5,000</td>
+            </tr>
+            <tr>
+              <td>WordPress</td>
+              <td>1 Month</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>Java</td>
+              <td>2 Months</td>
+              <td>Ksh. 8,500</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>2 Months</td>
+              <td>Ksh. 7,500</td>
+            </tr>
+            <tr>
+              <td>C/C++</td>
+              <td>1 Month</td>
+              <td>ksh. 5,500</td>
+            </tr>
+            <tr>
+              <td>Visual Basic</td>
+              <td>2 Months</td>
+              <td>Ksh. 8,500</td>
+            </tr>
+            <tr>
+              <td>Kotlin</td>
+              <td>2 Months</td>
+              <td>Ksh. 10,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="digital-skills">
+      <h3>Digital Skills</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Google Docs</td>
+              <td>2 Weeks</td>
+              <td>Ksh. 2,000</td>
+            </tr>
+            <tr>
+              <td>Google Sheets</td>
+              <td>2 Weeks</td>
+              <td>Ksh. 2,000</td>
+            </tr>
+            <tr>
+              <td>Zoom</td>
+              <td>1 Week</td>
+              <td>Ksh. 1,000</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td>2 Weeks</td>
+              <td>Ksh. 2,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="accounting">
+      <h3>Accounting & Statistical Package</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>QuickBooks</td>
+              <td>3 Weeks</td>
+              <td>Ksh. 3,500</td>
+            </tr>
+            <tr>
+              <td>Sage</td>
+              <td>3 Weeks</td>
+              <td>Ksh. 3,000</td>
+            </tr>
+            <tr>
+              <td>SPSS</td>
+              <td>2 Weeks</td>
+              <td>Ksh. 4,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="architectural-design">
+      <h3>Architectural & Home Design</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Archi-CAD</td>
+              <td>2 Months</td>
+              <td>Ksh. 13,500</td>
+            </tr>
+            <tr>
+              <td>Auto-CAD</td>
+              <td>1 Month</td>
+              <td>Ksh. 10,000</td>
+            </tr>
+            <tr>
+              <td>Revit</td>
+              <td>2 Months</td>
+              <td>Ksh. 13,500</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="icdl">
+      <h3>International Computer Driving Licence</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>ICDL</td>
+              <td>4 Months</td>
+              <td>Ksh. 32,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="hardware-software">
+      <h3>Computer Hardware & Software</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Computer Hardware & Software</td>
+              <td>3 Months</td>
+              <td>Ksh. 18,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="course-category" id="networking-cybersecurity">
+      <h3>Networking & Cyber Security</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Tuition Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Networking & Cyber Security</td>
+              <td>3 Months</td>
+              <td>Ksh. 18,000</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".course-category tbody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+      });
+    });
+  </script>
+
+{% endblock content %}

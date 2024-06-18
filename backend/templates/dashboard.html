@@ -152,6 +152,7 @@
   <div class="sidebar">
     <a href="#" id="manageTestimonialsBtn">Manage Testimonials</a>
     <a href="#" id="manageEnrollmentsBtn">Manage Enrollments</a>
+    <a href="#" id="manageContactsBtn">Manage Contacts</a>
     <a href="#" id="changePasswordBtn">Change Password</a>
   </div>
 
@@ -248,6 +249,37 @@
         </tbody>
       </table>
     </div>
+
+    <!-- Contact List Table -->
+    <div id="contactsTable" style="display: none;">
+      <h2>Contact List</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>time</th>
+          </tr>
+        </thead>
+        <tbody id="enrollmentList">
+          {% for contact in contacts %}
+          <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.message }}</td>
+            <td>{{ contact.time }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan='5'>No contact messages yet.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
   
   <script>
@@ -271,6 +303,11 @@
         $('#dashboardContent').hide();
         $('.content > div').hide();
         $('#enrollmentsTable').show();
+      });
+      $('#manageContactsBtn').click(function() {
+        $('#dashboardContent').hide();
+        $('.content > div').hide();
+        $('#contactsTable').show();
       });
     });
   </script>
