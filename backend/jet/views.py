@@ -121,3 +121,6 @@ def approve_testimonial(request, testimonial_id):
         testimonial.save()
         messages.success(request, "Successfully Approved")
     return redirect('dashboard')
+
+def course_list_view(request):
+    return render(request, 'course-list.html')
