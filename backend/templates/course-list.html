@@ -9,7 +9,7 @@
   <!-- Page Content -->
   <div class="container mt-5" style="padding-top: 65px;">
     <h2 class="text-center mb-4">Training Requirements</h2>
-    <p class="text-center">At Jetbrains College, we require students to carry 1 photocopy of ID/ Birth Certificate, 1 passphoto &amp; 1 A4 size booklet on admission.</p>
+    <p class="text-center">At Jetbrains College, we require students to carry 1 photocopy of ID/ Birth Certificate, 1 passport photo & 1 A4 size booklet on admission.</p>
 
     <h2 class="text-center mb-4">Our Courses</h2>
     <div class="row mb-4">
@@ -17,7 +17,8 @@
         <input class="form-control" id="searchInput" type="text" placeholder="Search for courses...">
       </div>
     </div>
-    <div id="coursesTable">
+    
+    <div class="course-category" id="computer-packages">
       <h3>Computer Packages</h3>
       <table class="table">
         <thead>
@@ -30,53 +31,49 @@
         <tbody>
             <tr>
               <td>Introduction to Computer</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Word processor</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Spreadsheet</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Database</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Presentation</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Publication</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>Internet</td>
-              <td></td>
-              <td></td>
+              <td>2.5 Months</td>
+              <td>Ksh. 7,500</td>
             </tr>
             <tr>
               <td>IT-Security</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
               <td>2.5 Months</td>
               <td>Ksh. 7,500</td>
             </tr>
         </tbody>
       </table>
     </div>
-    <div id="coursesTable">
+
+    <div class="course-category" id="graphic-design">
       <h3>Graphic Design</h3>
       <table class="table">
         <thead>
@@ -135,8 +132,9 @@
         </tbody>
       </table>
     </div>
-    <div id="coursesTable">
-      <h3>Programing / COding</h3>
+
+    <div class="course-category" id="programming">
+      <h3>Programming / Coding</h3>
       <table class="table">
         <thead>
           <tr>
@@ -152,7 +150,7 @@
               <td>Ksh. 5,000</td>
             </tr>
             <tr>
-              <td>Javascripting</td>
+              <td>JavaScript</td>
               <td>1 Month</td>
               <td>Ksh. 4,000</td>
             </tr>
@@ -162,7 +160,7 @@
               <td>Ksh. 5,000</td>
             </tr>
             <tr>
-              <td>Wordpress</td>
+              <td>WordPress</td>
               <td>1 Month</td>
               <td>Ksh. 7,500</td>
             </tr>
@@ -187,14 +185,15 @@
               <td>Ksh. 8,500</td>
             </tr>
             <tr>
-              <td>kotlin</td>
+              <td>Kotlin</td>
               <td>2 Months</td>
               <td>Ksh. 10,000</td>
             </tr>
         </tbody>
       </table>
     </div>
-    <div id="coursesTable">
+
+    <div class="course-category" id="digital-skills">
       <h3>Digital Skills</h3>
       <table class="table">
         <thead>
@@ -211,12 +210,12 @@
               <td>Ksh. 2,000</td>
             </tr>
             <tr>
-              <td>Google Sheet</td>
+              <td>Google Sheets</td>
               <td>2 Weeks</td>
               <td>Ksh. 2,000</td>
             </tr>
             <tr>
-              <td>Zooms</td>
+              <td>Zoom</td>
               <td>1 Week</td>
               <td>Ksh. 1,000</td>
             </tr>
@@ -228,8 +227,9 @@
         </tbody>
       </table>
     </div>
-    <div id="coursesTable">
-      <h3>Accounting &amp; Statistical Package</h3>
+
+    <div class="course-category" id="accounting">
+      <h3>Accounting & Statistical Package</h3>
       <table class="table">
         <thead>
           <tr>
@@ -257,8 +257,9 @@
         </tbody>
       </table>
     </div>
-    <div id="coursesTable">
-      <h3>Architectural &amp; Home Design</h3>
+
+    <div class="course-category" id="architectural-design">
+      <h3>Architectural & Home Design</h3>
       <table class="table">
         <thead>
           <tr>
@@ -285,7 +286,10 @@
             </tr>
         </tbody>
       </table>
-      <h3>International Computer Driving Licences</h3>
+    </div>
+
+    <div class="course-category" id="icdl">
+      <h3>International Computer Driving Licence</h3>
       <table class="table">
         <thead>
           <tr>
@@ -302,7 +306,10 @@
             </tr>
         </tbody>
       </table>
-      <h3>Computer Hardware &amp; Software</h3>
+    </div>
+
+    <div class="course-category" id="hardware-software">
+      <h3>Computer Hardware & Software</h3>
       <table class="table">
         <thead>
           <tr>
@@ -313,13 +320,16 @@
         </thead>
         <tbody>
             <tr>
-              <td></td>
+              <td>Computer Hardware & Software</td>
               <td>3 Months</td>
               <td>Ksh. 18,000</td>
             </tr>
         </tbody>
       </table>
-      <h3>Networking &amp; Cyber Security</h3>
+    </div>
+
+    <div class="course-category" id="networking-cybersecurity">
+      <h3>Networking & Cyber Security</h3>
       <table class="table">
         <thead>
           <tr>
@@ -330,8 +340,8 @@
         </thead>
         <tbody>
             <tr>
-              <td></td>
-              <td></td>
+              <td>Networking & Cyber Security</td>
+              <td>3 Months</td>
               <td>Ksh. 18,000</td>
             </tr>
         </tbody>
@@ -343,7 +353,7 @@
     $(document).ready(function() {
       $("#searchInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#coursesTable tbody tr").filter(function() {
+        $(".course-category tbody tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
       });
