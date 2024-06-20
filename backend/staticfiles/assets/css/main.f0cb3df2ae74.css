@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'Globe Font';
-  src: url('../fonts/TheGlobePersonalUseBold-2ORlw.ttf') format('truetype');
+  src: url("../fonts/TheGlobePersonalUseBold-2ORlw.0f6317b5bc54.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Thrones';
-  src: url('../fonts/thrones.alternative.ttf') format('truetype');
+  src: url("../fonts/thrones.alternative.267f3c1d435d.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
