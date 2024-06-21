@@ -23,7 +23,9 @@
   <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- JS files -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
@@ -34,12 +36,14 @@
     </div>
 
   <!-- Unique and responsive navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.png" alt="Jetbrains College Logo" class="d-inline-block align-top">
-        Jetbrains College
-      </a>
+      <div class="navbar-brand-container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/logo.png" alt="Jetbrains College Logo" class="d-inline-block align-top">
+          Jetbrains College
+        </a>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
