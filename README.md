@@ -1,11 +1,10 @@
 <p align="center">
-    <img src="./frontend/assets/images/logo.png" alt="Jetbrains College" width="200" height="200">
+    <img src="./frontend/assets/images/logo.png" alt="Jetbrains College" width="170" height="170">
 </p>
 
-# Jetbrains Institute of Information Technologies
+# <p align="center">Jetbrains Institute of Information Technologies</p>
 
 The official website for our institution for efficient service &amp; information delivery to our community.
-
 
 ## Table of Contents
 
@@ -102,5 +101,9 @@ Special thanks to:
 Thank you all for being part of our journey!
 
 <p align="center">
-    © 2024 Jetbrains College. All rights reserved.
+    -----------------------------------------------------------------------------
+</p>
+
+<p align="center">
+    ©2024 Jetbrains College || All rights reserved.
 </p>
