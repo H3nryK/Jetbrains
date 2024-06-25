@@ -66,6 +66,7 @@
           </div>
         </div>
         {% for testimonial in testimonies %}
+        {% if testimonial.approved %}
         <div class="carousel-item">
           <div class="testimonial-item">
             <i class="fas fa-quote-left testimonial-quote"></i>
@@ -74,6 +75,7 @@
             <p class="text-muted">W{{ testimonial.course }}</p>
           </div>
         </div>
+        {% endif %}
         {% empty %}
         <div class="carousel-item">
           <div class="testimonial-item">
