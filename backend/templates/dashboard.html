@@ -38,7 +38,7 @@
       height: calc(100vh - 56px); /* Adjusted height to avoid overlap with navbar */
       background-color: #084d9c;
       position: fixed;
-      top: 65px; /* Start below the navbar */
+      top: 85px; /* Start below the navbar */
       left: 0;
       width: 250px;
       padding-top: 20px;
@@ -61,6 +61,7 @@
     .content {
       margin-left: 250px;
       padding: 20px;
+      margin-top: 25px;
     }
     .card {
       margin-bottom: 20px;
@@ -93,11 +94,11 @@
   </div>
 
   <!-- Unique and responsive navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href={% url "main" %}>
         <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
-        Jetbrains College
+        <p>Jetbrains College</p>
       </a>
       <button class="navbar-toggler sidebar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -210,7 +211,7 @@
           </tr>
           {% empty %}
           <tr>
-            <td colspan='6'>No Testimonials yet.</td>
+            <td colspan='6' style="text-align: center;">No Testimonials yet.</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -243,7 +244,7 @@
           </tr>
           {% empty %}
           <tr>
-            <td colspan='6'>No enrollments yet.</td>
+            <td colspan='6' style="text-align: center;">No enrollments yet.</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -274,7 +275,7 @@
           </tr>
           {% empty %}
           <tr>
-            <td colspan='5'>No contact messages yet.</td>
+            <td colspan='5' style="text-align: center;">No contact messages yet.</td>
           </tr>
           {% endfor %}
         </tbody>

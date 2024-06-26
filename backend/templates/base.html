@@ -37,11 +37,11 @@
   </div>
 
   <!-- Unique and responsive navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href={% url "main" %}>
         <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
-        Jetbrains College
+        <p>Jetbrains College</p>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -108,21 +108,15 @@
                 <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="mr-3">
                 <h5>Jetbrains College</h5>
               </a>
-              <p>At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
+              <p>Jetbrains College provides a wide range of courses designed to equip students with practical skills in web development, programming, and computer packages. Our mission is to empower learners with the knowledge they need to succeed in the digital age.</p>
             </div>
             <div class="col-md-3">
               <h5>Quick Links</h5>
               <ul class="list-unstyled">
-                <li><a href={% url "main" %} class="footer-link">Home</a></li>
                 <li><a href={% url "courses" %} class="footer-link">Course category</a></li>
                 <li><a href={% url "course-list" %} class="footer-link">Course List</a></li>
                 <li><a href={% url "testify" %} class="footer-link">testify</a></li>
                 <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
-                {% if user.is_authenticated %}
-                <li><a href={% url "logout" %} class="footer-link">Logout</a></li>
-                {% else %}
-                <li><a href={% url "login" %} class="footer-link">Developer</a></li>
-                {% endif %}
               </ul>
             </div>
             <div class="col-md-3">

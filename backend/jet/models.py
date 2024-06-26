@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Enrollment(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True)
     phone = models.IntegerField()
     course = models.CharField(max_length=255)
     info = models.TextField()
@@ -14,7 +14,7 @@ class Enrollment(models.Model):
     
 class Contact(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True)
     phone = models.IntegerField()
     message = models.TextField()
     time = models.DateTimeField(default=timezone.now)
@@ -24,7 +24,7 @@ class Contact(models.Model):
     
 class Testimony(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True)
     course = models.CharField(max_length=255)
     message = models.TextField()
     time = models.DateTimeField(default=timezone.now)

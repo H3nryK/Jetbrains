@@ -64,7 +64,8 @@ def login_view(request):
             messages.success(request, f"Welcome {username}.")
             return redirect('dashboard')
         else:
-            messages.error(request, "Sorry, this isn't your desk.")
+            messages.warning(request, "Sorry, this isn't your desk.")
+            return redirect('login')
 
     else:
 
@@ -72,7 +73,6 @@ def login_view(request):
     
 def logout_view(request):
     logout(request)
-    messages.success(request, "See you buddy.")
     return redirect('main')
 
 def testify_view(request):
@@ -109,7 +109,7 @@ def dashboard_view(request):
             messages.success(request, f"Successfully changed your password.")
             return redirect('dashboard')
         else:
-            messages.error(request, f"Sorry, couldn't change your password.")
+            messages.warning(request, f"Sorry, couldn't change your password.")
     else:
         change_form = ChangePasswordForm(request.user)
 
