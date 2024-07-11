@@ -5,41 +5,50 @@
 {% block content %}
 
   <!-- Smart and beautiful -->
-  <div id="heroCarousel" class="carousel slide hero-section" data-ride="carousel">
+  <div id="heroCarousel" class="carousel slide hero-section" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#heroCarousel" data-bs-slide-to="2"></li>
+    </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <div class="content">
-              <h1 class="animate__animated">ICT skill on best</h1>
-              <p class="animate__animated">At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
-              <a class="btn btn-primary btn-lg animate__animated" href="{% url 'enroll' %}" role="button">Join Us Today</a>
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="content">
+                    <h1 class="animate__animated animate__fadeInDown">ICT skills at their best</h1>
+                    <p class="animate__animated animate__fadeInUp">At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
+                    <a class="btn btn-primary btn-lg animate__animated animate__bounceIn" href="{% url 'enroll' %}" role="button">Join Us Today</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <div class="content">
-              <h1 class="animate__animated">Advanced Programming</h1>
-              <p class="animate__animated">Learn the latest in programming languages and frameworks from industry experts.</p>
-              <a class="btn btn-primary btn-lg animate__animated" href="{% url 'courses' %}" role="button">Explore Courses</a>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="content">
+                    <h1 class="animate__animated animate__fadeInDown">Advanced Programming</h1>
+                    <p class="animate__animated animate__fadeInUp">Learn the latest in programming languages and frameworks from industry experts.</p>
+                    <a class="btn btn-primary btn-lg animate__animated animate__bounceIn" href="{% url 'courses' %}" role="button">Explore Courses</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- Add more carousel items as needed -->
+        <div class="carousel-item">
+            <div class="container">
+                <div class="content">
+                    <h1 class="animate__animated animate__fadeInDown">Tech Innovations</h1>
+                    <p class="animate__animated animate__fadeInUp">Stay ahead with our courses on the latest technological innovations and trends.</p>
+                    <a class="btn btn-primary btn-lg animate__animated animate__bounceIn" href="{% url 'enroll' %}" role="button">Learn More</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
     </a>
-  </div>  
+  </div>
 
   <!-- Course Cards -->
   <div class="container my-5">
@@ -56,7 +65,7 @@
           <div class="card-body">
             <h5 class="card-title">Computer packages</h5>
             <p class="card-text">We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
@@ -66,7 +75,7 @@
           <div class="card-body">
             <h5 class="card-title">Programming / Coding</h5>
             <p class="card-text">We offer introductory and advanced courses in programming languages such as Python, Java, C++, and PHP.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
@@ -76,7 +85,7 @@
           <div class="card-body">
             <h5 class="card-title">Graphics and Design</h5>
             <p class="card-text">We teach graphic design principles and practical skills using tools like Adobe Photoshop, Illustrator, and CorelDRAW.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
@@ -86,7 +95,7 @@
           <div class="card-body">
             <h5 class="card-title">Computer Aided Design</h5>
             <p class="card-text">We teach the use of computer softwares that assist in the creation, modification, analysis, or optimization of a design.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
@@ -96,7 +105,7 @@
           <div class="card-body">
             <h5 class="card-title">Accounting &amp; Statistical packages</h5>
             <p class="card-text">We provide training on using accounting software such as QuickBooks, Sage, and Tally for financial management and bookkeeping.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
@@ -106,10 +115,29 @@
           <div class="card-body">
             <h5 class="card-title">Digital Skills</h5>
             <p class="card-text">We teach broad range of abilities needed to effectively use digital devices, communication applications, and networks to access and manage information.</p>
-            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal"  data-course-title="Computer packages" data-course-description="We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.">Know more</button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="courseModalLabel">Course Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalCourseTitle"></h4>
+                <p id="modalCourseDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'course-list' %}" class="btn btn-primary">View All Courses</a>
+            </div>
+        </div>
     </div>
   </div>
 
