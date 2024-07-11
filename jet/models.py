@@ -6,6 +6,7 @@ class Enrollment(models.Model):
     email = models.EmailField(null=True)
     phone = models.IntegerField()
     course = models.CharField(max_length=255)
+    package = models.CharField(max_length=255)
     info = models.TextField()
     time = models.DateTimeField(default=timezone.now)
 

@@ -12,8 +12,8 @@
     {% include "_messages.html" %}
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <form action={% url "enroll" %} method='post'>
-            {% csrf_token %}
+        <form action="{% url 'enroll' %}" method='post'>
+          {% csrf_token %}
           <div class="form-group">
             <input type="text" class="form-control" id="name" name='name' placeholder="Enter your name">
           </div>
@@ -24,14 +24,19 @@
             <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter your phone number">
           </div>
           <div class="form-group">
-            <select class="form-control" id="course" name='course'>
-              <option>-- Select Course category --</option>
+            <select class="form-control" id="courseCategory" name='courseCategory'>
+              <option value="">-- Select Course category --</option>
               <option value='packages'>Computer Packages</option>
               <option value='coding'>Programming / Coding</option>
               <option value='graphics'>Graphic Design</option>
               <option value='digital'>Digital Skills</option>
-              <option value='accounting'>Accounting & Statistical packages</option>
+              <option value='accounting'>Accounting &amp; Statistical packages</option>
               <option value='cad'>Computer Aided Design</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select class="form-control" id="course" name='course' disabled>
+              <option value="">-- Select Course --</option>
             </select>
           </div>
           <div class="form-group">
@@ -42,5 +47,38 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const courseOptions = {
+      packages: ['MS Office', 'Google Workspace', 'LibreOffice'],
+      coding: ['Python', 'JavaScript', 'Java', 'C++'],
+      graphics: ['Adobe Photoshop', 'Adobe Illustrator', 'CorelDRAW'],
+      digital: ['Digital Marketing', 'Social Media Management', 'SEO'],
+      accounting: ['QuickBooks', 'SPSS', 'Sage 50'],
+      cad: ['AutoCAD', 'SolidWorks', 'Fusion 360']
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const categorySelect = document.getElementById('courseCategory');
+      const courseSelect = document.getElementById('course');
+    
+      categorySelect.addEventListener('change', function() {
+        const selectedCategory = this.value;
+        courseSelect.innerHTML = '<option value="">-- Select Course --</option>';
+    
+        if (selectedCategory && courseOptions[selectedCategory]) {
+          courseSelect.disabled = false;
+          courseOptions[selectedCategory].forEach(function(course) {
+            const option = document.createElement('option');
+            option.value = course;
+            option.textContent = course;
+            courseSelect.appendChild(option);
+          });
+        } else {
+          courseSelect.disabled = true;
+        }
+      });
+    });
+    </script>
 
 {% endblock content %}

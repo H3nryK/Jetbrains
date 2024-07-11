@@ -35,15 +35,17 @@ def enroll_view(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        course = request.POST.get('course')
+        course = request.POST.get('courseCategory')
         info = request.POST.get('message')
+        package = request.POST.get('course')
 
         enroll, created = Enrollment.objects.get_or_create(
             name = name,
             email = email,
             phone = phone,
             course = course,
-            info = info
+            info = info,
+            package = package
         )
 
         messages.success(request, "Thank you for Joining us.")
