@@ -158,48 +158,50 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4 animate__animated animate__fadeInDown">Get in Touch</h2>
-    {% include "_messages.html" %}
-    <div class="row">
-      <div class="col-md-6 animate__animated animate__fadeInLeft">
-        <div class="contact-form">
-          <form action={% url "main" %} method='post'>
-            {% csrf_token %}
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name='name' placeholder="Enter your name">
+  <section class="contact-section">
+    <div class="container">
+        <h2 class="text-center mb-5 animate__animated animate__fadeInDown">Get in Touch</h2>
+        {% include "_messages.html" %}
+        <div class="row g-4">
+            <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                <div class="contact-form">
+                    <form action="{% url 'main' %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="number" name="number" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 animate__animated animate__bounceIn">Send Message</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email"  name='email' placeholder="Enter your email">
+            <div class="col-lg-6 animate__animated animate__fadeInRight">
+                <div class="contact-info">
+                    <h5>Contact Information</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Limuru, Kiambu County</p>
+                    <p><i class="fas fa-building"></i> Jaskat House, Co-op Building Rm. 406 4<sup>th</sup> floor</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p>
+                    <div class="social-icons">
+                        <h5>Follow Us</h5>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="number" class="form-control" id="number" name='number' placeholder="Enter your Number">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" id="message" name='message' rows="5" placeholder="Enter your message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary animate__animated animate__bounceIn">Submit</button>
-          </form>
         </div>
-      </div>
-      <div class="col-md-6 animate__animated animate__fadeInRight">
-        <div class="contact-info">
-          <h5>Contact Information</h5>
-          <p><i class="fas fa-map-marker-alt"></i> Limuru,Kiambu County</p>
-          <p><i class="fas fa-building-alt"></i> Jaskat House, Co-op Building Rm. 406 4<sup>Th</sup> floor</p>
-          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
-          <h5>Follow Us</h5>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#" class="text-black"><i class="fab fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-black"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-black"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-black"><i class="fab fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
+  </section>
 
   <script>
     const testimonials = [
