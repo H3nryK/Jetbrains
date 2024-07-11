@@ -436,6 +436,21 @@ a {
   color: #7d0e31;
 }
 
+/* course table */
+
+.accordion-button:not(.collapsed) {
+  background-color: #084d9c;
+  color: white;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0,0,0,.125);
+}
+.table-responsive {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 /* Footer */
 .footer {
   background-color: #084d9c;
