@@ -40,52 +40,44 @@
   <!-- Unique and responsive navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href={% url "main" %}>
-        <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="d-inline-block align-top">
+      <a class="navbar-brand" href="{% url 'main' %}">
+        <img src="{% static 'assets/images/logo.png' %}" alt="Jetbrains College Logo" class="d-inline-block align-top">
         <p>Jetbrains College</p>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'course-list' %}">Course list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'testify' %}">Testify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'enroll' %}">Enroll</a>
+          </li>
           {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href={% url "main" %}>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "course-list" %}>Course list</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "testify" %}>Testify</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "dashboard" %}>Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "logout" %}>Logout</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href={% url "main" %}>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "course-list" %}>Course list</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "testify" %}>Testify</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'enroll' %}>Enroll</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "login" %}>Developer</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Developer</a>
+            </li>
           {% endif %}
         </ul>
+        <div class="d-flex">
+          <a href="{% static "assets/recources/jet.pdf" %}" class="btn btn-outline-primary me-2" download>Download Flyer</a>
+          <a href="tel:+1234567890" class="btn btn-primary">Call Us</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -94,44 +86,44 @@
   
   {% endblock content %}
   
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <a href={% url "main" %} class="navbar-brand d-flex align-items-center">
-                <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="mr-3">
-                <h5>Jetbrains College</h5>
-              </a>
-              <p>Jetbrains College provides a wide range of courses designed to equip students with practical skills in web development, programming, and computer packages. Our mission is to empower learners with the knowledge they need to succeed in the digital age.</p>
-            </div>
-            <div class="col-md-3">
-              <h5>Quick Links</h5>
-              <ul class="list-unstyled">
-                <li><a href={% url "courses" %} class="footer-link">Course category</a></li>
-                <li><a href={% url "course-list" %} class="footer-link">Course List</a></li>
-                <li><a href={% url "testify" %} class="footer-link">testify</a></li>
-                <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h5>Talk to Us</h5>
-              <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-              <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
-              <ul class="list-inline">
-                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-          <div class="text-center">
-            <p>&copy; 2024 Jetbrains College. All rights reserved.</p>
-          </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href={% url "main" %} class="navbar-brand d-flex align-items-center">
+            <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="mr-3">
+            <h5>Jetbrains College</h5>
+          </a>
+          <p>Jetbrains College provides a wide range of courses designed to equip students with practical skills in web development, programming, and computer packages. Our mission is to empower learners with the knowledge they need to succeed in the digital age.</p>
         </div>
-      </footer>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href={% url "courses" %} class="footer-link">Course category</a></li>
+            <li><a href={% url "course-list" %} class="footer-link">Course List</a></li>
+            <li><a href={% url "testify" %} class="footer-link">testify</a></li>
+            <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Talk to Us</h5>
+          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2024 Jetbrains College. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
     
   <!-- Internal JS -->
   <script>
