@@ -75,7 +75,7 @@
           {% endif %}
         </ul>
         <div class="d-flex">
-          <a href="{% static "assets/recources/jet.pdf" %}" class="btn btn-outline-primary me-2" download>Download Flyer</a>
+          <a href="{% static "assets/resources/jet.pdf" %}" class="btn btn-outline-primary me-2" download>Download Flyer</a>
           <a href="tel:+1234567890" class="btn btn-primary">Call Us</a>
         </div>
       </div>
@@ -89,38 +89,45 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <a href={% url "main" %} class="navbar-brand d-flex align-items-center">
-            <img src={% static "assets/images/logo.png" %} alt="Jetbrains College Logo" class="mr-3">
-            <h5>Jetbrains College</h5>
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="{% url 'main' %}" class="footer-brand d-flex align-items-center mb-3">
+            <img src="{% static 'assets/images/logo.png' %}" alt="Jetbrains College Logo" class="me-3">
+            <h5 class="mb-0">Jetbrains College</h5>
           </a>
-          <p>Jetbrains College provides a wide range of courses designed to equip students with practical skills in web development, programming, and computer packages. Our mission is to empower learners with the knowledge they need to succeed in the digital age.</p>
+          <p class="footer-description">Jetbrains College provides a wide range of courses designed to equip students with practical skills in web development, programming, and computer packages. Our mission is to empower learners with the knowledge they need to succeed in the digital age.</p>
         </div>
-        <div class="col-md-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href={% url "courses" %} class="footer-link">Course category</a></li>
-            <li><a href={% url "course-list" %} class="footer-link">Course List</a></li>
-            <li><a href={% url "testify" %} class="footer-link">testify</a></li>
-            <li><a href={% url "enroll" %} class="footer-link">Enroll</a></li>
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="{% url 'courses' %}">Course category</a></li>
+            <li><a href="{% url 'course-list' %}">Course List</a></li>
+            <li><a href="{% url 'testify' %}">Testify</a></li>
+            <li><a href="{% url 'enroll' %}">Enroll</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
-          <h5>Talk to Us</h5>
-          <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-linkedin"></i></a></li>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Talk to Us</h5>
+          <ul class="list-unstyled footer-contact">
+            <li><i class="fas fa-phone me-2"></i>(123) 456-7890</li>
+            <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-heading">Follow Us</h5>
+          <ul class="list-inline footer-social">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
-      <hr>
-      <div class="text-center">
-        <p>&copy; 2024 Jetbrains College. All rights reserved.</p>
+      <hr class="footer-divider">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="footer-copyright">&copy; 2024 Jetbrains College. All rights reserved.</p>
+        </div>
       </div>
     </div>
   </footer>

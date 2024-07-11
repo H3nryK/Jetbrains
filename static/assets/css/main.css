@@ -23,6 +23,9 @@ h1, h2, h3 {
   font-style: normal;
 }
 
+a {
+  text-decoration: none;
+}
 /* Smoooth Scroll */
 
 :root {
@@ -437,34 +440,91 @@ h1, h2, h3 {
 .footer {
   background-color: #084d9c;
   color: #fff;
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
   animation: fadeInUp 1s ease;
 }
 
-.footer h5 {
-    color: #ffffff;
-    font-family: "DM Serif Text", serif;
-    font-size: 700;
-    font-style: normal;
+.footer-brand img {
+  height: 40px;
 }
 
-.footer-link {
+.footer-brand h5 {
+  color: #ffffff;
+  font-family: "DM Serif Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-family: "DM Serif Text", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-contact a {
   color: #fff;
   transition: all 0.3s ease;
-}
-
-.footer-link:hover {
-  color: #bdafa6;
   text-decoration: none;
 }
 
-.footer-social-link {
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #bdafa6;
+}
+
+.footer-contact li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.footer-social a {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-right: 1rem;
   transition: all 0.3s ease;
 }
 
-.footer-social-link:hover {
+.footer-social a:hover {
   color: #bdafa6;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
 }
