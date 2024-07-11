@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./frontend/assets/images/logo.png" alt="Jetbrains College" width="170" height="170">
+    <img src="./frontend/assets/images/logo.png" alt="Jetbrains College" width="150">
 </p>
 
 # <p align="center">Jetbrains Institute of Information Technologies</p>
