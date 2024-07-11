@@ -53,9 +53,6 @@
             <a class="nav-link" href={% url "main" %}>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={% url "courses" %}>Course category</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href={% url "course-list" %}>Course list</a>
           </li>
           <li class="nav-item">
@@ -73,9 +70,6 @@
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href={% url "main" %}>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url "courses" %}>Course category</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href={% url "course-list" %}>Course list</a>
@@ -120,7 +114,9 @@
               </ul>
             </div>
             <div class="col-md-3">
-              <h5>Follow Us</h5>
+              <h5>Talk to Us</h5>
+              <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
               <ul class="list-inline">
                 <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-facebook"></i></a></li>
                 <li class="list-inline-item"><a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a></li>

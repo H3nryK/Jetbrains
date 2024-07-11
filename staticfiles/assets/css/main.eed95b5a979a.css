@@ -37,7 +37,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #084d9c99;
+  background: #084d9c;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -135,7 +135,7 @@ h1, h2, h3 {
 
 .hero-section {
   position: relative;
-  background: url('../images/courses/ms.jpg') no-repeat center center;
+  background: url("../images/courses/ms.f20291cca43c.jpg") no-repeat center center;
   background-size: cover;
   color: white;
   padding: 120px 20px;
@@ -316,9 +316,9 @@ h1, h2, h3 {
 }
 
 .footer h5 {
-    color: #ffffff;
+    color: #bdafa6;
     font-family: "DM Serif Text", serif;
-    font-size: 700;
+    font-size: 400;
     font-style: normal;
 }
 

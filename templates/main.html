@@ -5,47 +5,108 @@
 {% block content %}
 
   <!-- Smart and beautiful -->
-  <div class="jumbotron jumbotron-fluid hero-section">
-    <div class="container">
-      <div class="content">
-        <h1 class="animate__animated">ICT skill on best</h1>
-        <p class="animate__animated">At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
-        <a class="btn btn-primary btn-lg animate__animated" href={% url "enroll" %} role="button">Join Us Today</a>
+  <div id="heroCarousel" class="carousel slide hero-section" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <div class="content">
+              <h1 class="animate__animated">ICT skill on best</h1>
+              <p class="animate__animated">At Jetbrains Institute of Information Technology, we offer computer & related short courses that equip students with digital and practical skills.</p>
+              <a class="btn btn-primary btn-lg animate__animated" href="{% url 'enroll' %}" role="button">Join Us Today</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="carousel-item">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <div class="content">
+              <h1 class="animate__animated">Advanced Programming</h1>
+              <p class="animate__animated">Learn the latest in programming languages and frameworks from industry experts.</p>
+              <a class="btn btn-primary btn-lg animate__animated" href="{% url 'courses' %}" role="button">Explore Courses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add more carousel items as needed -->
     </div>
-  </div>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>  
 
   <!-- Course Cards -->
   <div class="container my-5">
-    <h2 class="text-center mb-4">Popular Courses</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card course-card">
-          <img src={% static "assets/images/courses/ms.jpg" %} class="card-img-top" alt="Course Image">
+    <h2 class="text-center mb-4">Our Courses</h2>
+    <div class="row mb-4">
+      <div class="col-md-6 offset-md-3">
+        <input class="form-control" id="searchInput" type="text" placeholder="Search for courses...">
+      </div>
+    </div>
+    <div class="row" id="courseList">
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/ms.jpg" %} class="card-img-top" alt="Web Development">
           <div class="card-body">
-            <h5 class="card-title">Computer Packages | 2.5 Months</h5>
+            <h5 class="card-title">Computer packages</h5>
             <p class="card-text">We covers fundamental skills such as word processing (e.g., Microsoft Word), spreadsheets (e.g., Microsoft Excel), and internet usage.</p>
-            <a href={% url "enroll" %} class="btn btn-primary">Start Now</a>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card course-card">
-          <img src={% static "assets/images/courses/graphics.jpg" %} class="card-img-top" alt="Course Image">
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/py.jpg" %} class="card-img-top" alt="Python Programming">
+          <div class="card-body">
+            <h5 class="card-title">Programming / Coding</h5>
+            <p class="card-text">We offer introductory and advanced courses in programming languages such as Python, Java, C++, and PHP.</p>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/graphics.jpg" %} class="card-img-top" alt="Computer Packages">
           <div class="card-body">
             <h5 class="card-title">Graphics and Design</h5>
             <p class="card-text">We teach graphic design principles and practical skills using tools like Adobe Photoshop, Illustrator, and CorelDRAW.</p>
-            <a href={% url "enroll" %} class="btn btn-primary">Start Now</a>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card course-card">
-          <img src={% static "assets/images/courses/web.jpg" %} class="card-img-top" alt="Course Image">
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/cad.jpg" %} class="card-img-top" alt="Computer Packages">
           <div class="card-body">
-            <h5 class="card-title">Web Design and Development</h5>
-            <p class="card-text">We cover web design principles and coding using HTML, CSS, JavaScript, and web development platforms like WordPress.</p>
-            <a href={% url "enroll" %} class="btn btn-primary">Start Now</a>
+            <h5 class="card-title">Computer Aided Design</h5>
+            <p class="card-text">We teach the use of computer softwares that assist in the creation, modification, analysis, or optimization of a design.</p>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/accounting.jpg" %} class="card-img-top" alt="Computer Packages">
+          <div class="card-body">
+            <h5 class="card-title">Accounting &amp; Statistical packages</h5>
+            <p class="card-text">We provide training on using accounting software such as QuickBooks, Sage, and Tally for financial management and bookkeeping.</p>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 course-card">
+        <div class="card">
+          <img src={% static "assets/images/courses/DG.jpg" %} class="card-img-top" alt="Computer Packages">
+          <div class="card-body">
+            <h5 class="card-title">Digital Skills</h5>
+            <p class="card-text">We teach broad range of abilities needed to effectively use digital devices, communication applications, and networks to access and manage information.</p>
+            <a href={% url "course-list" %} class="btn btn-primary">Know more</a>
           </div>
         </div>
       </div>
@@ -129,7 +190,7 @@
           <p><i class="fas fa-map-marker-alt"></i> Limuru,Kiambu County</p>
           <p><i class="fas fa-building-alt"></i> Jaskat House, Co-op Building Rm. 406 4<sup>Th</sup> floor</p>
           <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@jetbrainscollege.edu">info@jetbrainscollege.edu</a></p><br>
           <h5>Follow Us</h5>
           <ul class="list-inline">
             <li class="list-inline-item"><a href="#" class="text-black"><i class="fab fa-facebook"></i></a></li>

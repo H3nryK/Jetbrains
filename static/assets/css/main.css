@@ -37,7 +37,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #084d9c;
+  background: #084d9c99;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -135,13 +135,27 @@ h1, h2, h3 {
 
 .hero-section {
   position: relative;
-  background: url('../images/courses/ms.jpg') no-repeat center center;
-  background-size: cover;
   color: white;
   padding: 120px 20px;
   margin-top: 75px;
   border-bottom: 7px solid rgba(150, 17, 59, 1);
 }
+
+.hero-section .carousel-item {
+  height: 100vh; /* Full height for each slide */
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-section .carousel-item:nth-child(1) {
+  background: url('../images/courses/ms.jpg') no-repeat center center;
+}
+
+.hero-section .carousel-item:nth-child(2) {
+  background: url('../images/courses/advanced.jpg') no-repeat center center;
+}
+
+/* Add more background images as needed for additional slides */
 
 .hero-section::before {
   content: '';
@@ -200,7 +214,6 @@ h1, h2, h3 {
     max-width: 100%;
   }
 }
-
 
 /* Course cards */
 .course-card {
@@ -316,9 +329,9 @@ h1, h2, h3 {
 }
 
 .footer h5 {
-    color: #bdafa6;
+    color: #ffffff;
     font-family: "DM Serif Text", serif;
-    font-size: 400;
+    font-size: 700;
     font-style: normal;
 }
 

@@ -135,7 +135,7 @@ h1, h2, h3 {
 
 .hero-section {
   position: relative;
-  background: url('../images/courses/ms.jpg') no-repeat center center;
+  background: url("../images/courses/ms.f20291cca43c.jpg") no-repeat center center;
   background-size: cover;
   color: white;
   padding: 120px 20px;
