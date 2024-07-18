@@ -167,15 +167,15 @@ a {
 }
 
 .carousel-item:nth-child(1) {
-  background-image: url('../images/courses/ms.jpg');
+  background-image: url('../images/courses/IMG_3527.jpg');
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses/py.jpg');
+  background-image: url('../images/courses/IMG_3537.jpg');
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/graphics.jpg');
+  background-image: url('../images/courses/py.jpg');
 }
 
 .hero-section::before {
