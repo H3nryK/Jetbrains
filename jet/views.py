@@ -27,9 +27,6 @@ def main_view(request):
 
     return render(request, 'main.html', {'testimonies':testimonies})
 
-def course_view(request):
-    return render(request, 'courses.html')
-
 def enroll_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
