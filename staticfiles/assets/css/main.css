@@ -196,6 +196,7 @@ a {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-section .content {
@@ -207,6 +208,7 @@ a {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  letter-spacing: .5rem;
 }
 
 .hero-section p {

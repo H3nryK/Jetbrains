@@ -167,15 +167,15 @@ a {
 }
 
 .carousel-item:nth-child(1) {
-  background-image: url('../images/courses/IMG_3527.jpg');
+  background-image: url("../images/courses/IMG_3527.04e177ecdb4b.jpg");
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses/IMG_3537.jpg');
+  background-image: url("../images/courses/IMG_3537.00f7e838d2de.jpg");
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/IMG_3525.jpg');
+  background-image: url("../images/courses/IMG_3525.913481a831d2.jpg");
 }
 
 .hero-section::before {
@@ -208,7 +208,7 @@ a {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  letter-spacing: .5rem;
+  letter-spacing: 1px;
 }
 
 .hero-section p {
