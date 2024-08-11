@@ -7,8 +7,8 @@ urlpatterns = [
     path('enroll/', enroll_view, name='enroll'),
     path('course-list/', course_list_view, name='course-list'),
 
-    path('desk/', LogoutView.as_view(next_page='main'), name='login'),
-    path('logout/', logout_view, name='logout'),
+    path('desk/', login_view, name='login'),
+    path('logout/', LogoutView.as_view(next_page='main'), name='logout'),
     path('testify/', testify_view, name='testify'),
 
     path('dashboard/', dashboard_view, name='dashboard'),
