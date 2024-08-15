@@ -87,8 +87,7 @@ Special thanks to:
 </p>
 
 <p align="center">
-Mr. Samuel Njenga
-Our amazing community of users - Your enthusiasm and feedback drive us to continually improve Jetbrains College.
+Mr. Samuel Njenga & Our amazing community of users - Your enthusiasm and feedback drive us to continually improve Jetbrains College.
 </p>
 
 <p align="center">
