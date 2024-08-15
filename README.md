@@ -2,9 +2,9 @@
     <img src="./static/assets/images/logo.webp" alt="Jetbrains College" width="170" height="100">
 </p>
 
-# <p align="center">Jetbrains Institute of Information Technologies</p>
+# <p align="center">Jetbrains Institute of Information Technology</p>
 
-The official website for our institution for efficient service &amp; information delivery to our community.
+The official website for Jetbrains College in meeting the need of efficient service &amp; information delivery to our community & impacting digital skills in the society.
 
 ## Table of Contents
 
@@ -21,14 +21,10 @@ Jetbrains College provides a wide range of courses designed to equip students wi
 
 ## Features
 
-- Responsive web design
-- Interactive course cards
-- Student testimonials carousel
-- Contact form and information
-- Smooth scrolling navigation
-- Preloader animation
-- Sticky navbar
-- Social media integration
+- Easy student enrollment for courses.
+- Access to a wide range of courses.
+- Can testify for a course & service review.
+- Access to our communication channels.
 
 ## Installation
 
@@ -51,29 +47,22 @@ To run Jetbrains College locally, follow these steps:
 
 Once done with the installation:
 
-1. Get inside the frontend directory and run the static files:
-    ```bash
-    cd frontend
-    ```
-2. Open the `index.html`.
+1. Make migrations:
 
-or alternatively:
-
-3. Get inside the backend directory:
-    ```bash
-    cd backend
-    ```
-4. Make migrations:
     ```bash
     py manage.py makemigrations
     py manage.py migrate
     ```
-5. Collect static files:
+
+2. Collect static files:
+
     ```bash
     py manage.py collectstatic
     ```
     type `yes` if prompted.
-6. Run the server:
+
+3. Run the server:
+
     ```bash
     py manage.py runserver
     ```
@@ -93,12 +82,18 @@ We welcome contributions from the community! If you would like to contribute to 
 
 We would like to extend our heartfelt thanks to everyone who has contributed to the success of Jetbrains College. Your support, feedback, and contributions have been invaluable in shaping this project into what it is today.
 
+<p align="center">
 Special thanks to:
+</p>
 
-- Mr. Samuel Njenga
-- Our amazing community of users - Your enthusiasm and feedback drive us to continually improve Jetbrains College.
+<p align="center">
+Mr. Samuel Njenga
+Our amazing community of users - Your enthusiasm and feedback drive us to continually improve Jetbrains College.
+</p>
 
+<p align="center">
 Thank you all for being part of our journey!
+</p>
 
 <p align="center">
     -----------------------------------------------------------------------------
