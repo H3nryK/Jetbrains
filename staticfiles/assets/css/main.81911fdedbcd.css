@@ -166,15 +166,15 @@ a {
 }
 
 .carousel-item:nth-child(1) {
-  background-image: url('../images/courses/IMG_3527.webp');
+  background-image: url("../images/courses/IMG_3527.842ceea28a0c.webp");
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses/pic1.webp');
+  background-image: url("../images/courses/pic1.a7c2e7b71725.webp");
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/img_3537.webp');
+  background-image: url("../images/courses/img_3537.dd467ae43005.webp");
 }
 
 .hero-section::before {
