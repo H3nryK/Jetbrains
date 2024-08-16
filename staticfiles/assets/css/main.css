@@ -40,7 +40,7 @@ a {
   width: 100%;
   height: 100%;
   background: #084d9c99;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   z-index: 9999;
   display: flex;
   justify-content: center;
