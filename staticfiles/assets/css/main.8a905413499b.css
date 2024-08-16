@@ -253,15 +253,15 @@ a {
 }
 
 .carousel-item:nth-child(1) {
-  background-image: url('../images/courses/IMG_3527.webp');
+  background-image: url("../images/courses/IMG_3527.842ceea28a0c.webp");
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses/img_3537.webp');
+  background-image: url("../images/courses/img_3537.dd467ae43005.webp");
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/download.webp');
+  background-image: url("../images/courses/download.81e1d3c77ab2.webp");
 }
 
 .hero-section::before {
