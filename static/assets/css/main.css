@@ -170,11 +170,11 @@ a {
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses');
+  background-image: url('../images/courses/pic2.jpg');
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/IMG_3525.webp');
+  background-image: url('../images/courses/img_3537.webp');
 }
 
 .hero-section::before {
