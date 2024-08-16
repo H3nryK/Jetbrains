@@ -257,11 +257,11 @@ a {
 }
 
 .carousel-item:nth-child(2) {
-  background-image: url('../images/courses/pic1.webp');
+  background-image: url('../images/courses/img_3537.webp');
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/img_3537.webp');
+  background-image: url('../images/courses/download.png');
 }
 
 .hero-section::before {
