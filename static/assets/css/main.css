@@ -261,7 +261,7 @@ a {
 }
 
 .carousel-item:nth-child(3) {
-  background-image: url('../images/courses/download.png');
+  background-image: url('../images/courses/download.webp');
 }
 
 .hero-section::before {
